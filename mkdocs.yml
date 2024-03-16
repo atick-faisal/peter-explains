@@ -1,6 +1,6 @@
 site_name: Peter Explains
 repo_name: peter-explains
-repo_url: https://github.com/atick-faisal/Jetpack-Compose-Starter
+repo_url: https://github.com/atick-faisal/peter-explains/
 
 theme:
     name: material

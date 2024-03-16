@@ -1,10 +1,10 @@
 ## **peter: Your Linux Command Translator (Peter Griffin Edition)**
 
-![Banner](docs/assets/banner.png)
+![Banner](https://github.com/atick-faisal/peter-explains/blob/main/docs/assets/banner.png)
 
 Hey Lois, ever wanted to understand those geeky Linux commands but were afraid you'd end up more confused than a monkey trying to do its taxes? Well, fear no more! `peter` is here to break down those brainy terminal things in a way even I can understand (well, mostly).
 
-![Demo](docs/assets/demo.gif)
+![Demo](https://github.com/atick-faisal/peter-explains/blob/main/docs/assets/demo.gif)
 
 ### **How the Heck Does This Work?**
 
@@ -12,13 +12,11 @@ Hey Lois, ever wanted to understand those geeky Linux commands but were afraid y
 2. **I whip out my trusty Gemini AI translator:** This thing's smarter than Stewie after a bowl of spinach, and it'll turn that boring 'ls' command into a hilarious hot mess of an explanation.
 3. **You laugh (or groan), but hey, at least you learn somethin':** Maybe you'll actually remember what those commands do instead of just blindly copying stuff from the internet like a parrot.
 
-!!! tip "Help"
+### Help
 
     Run the following for help
 
-    ``` bash
-    peter --help
-    ```
+    $ peter --help
 
 ### **Gettin' Started (For Dummies Like Me)**
 
@@ -26,16 +24,14 @@ Hey Lois, ever wanted to understand those geeky Linux commands but were afraid y
 2. **Use pip to install this amazingness:** `pip install peter-explains`
 3. **Boom! Unleash the Peter:** Try something like `peter grep`. Just don't ask me to explain it – that's the AI's job.
 
-!!! warning "Retep is gonna ruin your day if you try to use without the API KEY"
+### Retep is gonna ruin your day if you try to use without the API KEY
 
     Don't worry. Meg's here to help. You need Google Gemini API KEY
 
     - Get yours from here: [https://aistudio.google.com/app/](https://aistudio.google.com/app/)
     - Add the `API KEY` your Environment by running the following:
 
-    ```bash
-      export GOOGLE_API_KEY=YOUR_KEY
-    ```
+      $ export GOOGLE_API_KEY=YOUR_KEY
 
     - (Recommended) Add this line to your `.bashrc` or `.zshrc`
 
