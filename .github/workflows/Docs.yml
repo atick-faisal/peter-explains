@@ -22,7 +22,7 @@ jobs:
 
             - name: Generate Docs
               run: |
-                  pip install mkdocs mkdocs-material mkdocstrings
+                  pip install mkdocs mkdocs-material mkdocstrings-python
                   mkdocs build
                   mkdocs gh-deploy
 

@@ -1,3 +1,6 @@
 pylint
 twine
 setuptools
+mkdocs
+mkdocs-material
+mkdocstrings-python
