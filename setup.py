@@ -7,7 +7,7 @@ long_description = (this_directory / "README.md").read_text()
 
 setup(
     name="peter-explains",
-    version="0.0.2",
+    version="0.0.3_1",
     description="Linux command explanations from Peter Griffin",
     author="Atick Faisal",
     author_email="atickfaisal@gmail.com",
