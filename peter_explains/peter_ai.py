@@ -3,7 +3,7 @@ import google.generativeai as genai
 genai.configure(transport="grpc_asyncio")
 model = genai.GenerativeModel("gemini-pro")
 
-prompt = """
+PROMPT = """
 **Task:** Explain the Linux command in a JSON format suitable for use in a command-line tool. Remember, this is for a humorous tool with Peter Griffin-like explanations, so be creative and casual!
 
 **Input:** {command}
@@ -36,5 +36,5 @@ prompt = """
 
 
 async def explain_command(command: str) -> str:
-    response = await model.generate_content_async(prompt.format(command=command))
+    response = await model.generate_content_async(PROMPT.format(command=command))
     return response.text

@@ -37,7 +37,7 @@ disable=missing-docstring,
         too-many-lines,
         line-too-long,
         fixme,
-        duplicate-code
+        duplicate-code,
         broad-except 
 
 [REPORTS]
