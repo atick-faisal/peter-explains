@@ -29,6 +29,32 @@ error_messages = [
 ]
 
 
+def forgot_api_key():
+    print(
+        Fore.RED
+        + "Aw, c'mon! Where's the freakin' API key? You think this thing works by magic?"
+        + Style.RESET_ALL
+    )
+    print(Fore.YELLOW + "\nAlright, numbskull, listen up:" + Style.RESET_ALL)
+    print(
+        f"1. Go to this fancy website: {Fore.LIGHTBLUE_EX}{'https://aistudio.google.com/app/'}{Style.RESET_ALL} (Don't screw it up.)"
+    )
+    print(
+        "2. Get yourself one of those API key thingies.  It's like a secret password for robots."
+    )
+    print(
+        "3. Figure out this 'environment variable' stuff. Ask Meg, she's probably smarter than you."
+    )
+    print(
+        f"4. Meg said you gotta add {Fore.LIGHTBLUE_EX}export GOOGLE_API_KEY=<YOUR KEY>{Style.RESET_ALL} to your .bashrc or .zshrc or whatever ya got."
+    )
+    print("5. Shut up Meg!")
+    print(
+        Fore.YELLOW + "Got all that? Now go do it right this time!\n" + Style.RESET_ALL
+    )
+    sys.exit(0)
+
+
 def stylize_output(output: str) -> None:
     data = json.loads(output)
 

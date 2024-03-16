@@ -1,6 +1,14 @@
+import os
 import google.generativeai as genai
+from .utils import forgot_api_key
 
-genai.configure(transport="grpc_asyncio")
+
+API_KEY = os.environ.get("GOOGLE_API_KEY")
+
+if API_KEY is None:
+    forgot_api_key()
+
+genai.configure(transport="grpc_asyncio", api_key=API_KEY)
 model = genai.GenerativeModel("gemini-pro")
 
 PROMPT = """
