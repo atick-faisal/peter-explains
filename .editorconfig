@@ -1,0 +1,10 @@
+root = true 
+
+[*]  # Applies these settings to all files
+indent_style = space
+indent_size = 4
+
+[*.py]  # Applies these settings to Python files
+max_line_length = 79  
+
+aggressive = aggressive

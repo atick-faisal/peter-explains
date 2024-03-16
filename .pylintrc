@@ -1,0 +1,97 @@
+[MASTER]
+# Add <f1> to the ignore list. It should be a base name, not a path. You can also set this list in a file.
+ignore=CVS
+
+# Python code to execute, usually for sys.path manipulation such as pygtk.require().
+#init-hook=
+
+# Use multiple processes to speed up Pylint. 0 means auto-detect number of processors.
+jobs=0
+
+# List of plugins (as comma separated values of python modules names) to load, usually to register additional checkers.
+#load-plugins=
+
+# Pickle collected data for later comparisons.
+persistent=yes
+
+# Specify a configuration file.
+#rcfile=
+
+# Allow loading of arbitrary C extensions. Extensions are imported into the active Python interpreter and may run arbitrary code.
+unsafe-load-any-extension=no
+
+[MESSAGES CONTROL]
+# Only show these messages. Leave empty to show all messages.
+#enable=
+
+# Disable the message, report, category or checker with the given id(s). You can either give multiple identifiers separated by comma (,) or put this option multiple times.
+disable=missing-docstring,
+        too-few-public-methods,
+        too-many-arguments,
+        too-many-instance-attributes,
+        too-many-locals,
+        too-many-return-statements,
+        too-many-branches,
+        too-many-statements,
+        too-many-public-methods,
+        too-many-lines,
+        line-too-long,
+        fixme,
+        duplicate-code
+
+[REPORTS]
+# Python expression which should return a note less than 10. You have access to the variables errors warning, statement which respectively contain the number of errors / warnings messages and the total number of statements analyzed.
+evaluation=10.0 - ((float(5 * error + warning + refactor + convention) / statement) * 10)
+
+# Template used to display messages. This is a python new-style format string used to format the message information. See doc for all details.
+#msg-template=
+
+# Set the output format. Available formats are text, parseable, colorized, json and msvs (visual studio).You can also give a reporter class, e.g. mypackage.mymodule.MyReporterClass.
+output-format=text
+
+# Tells whether to display a full report or only the messages.
+reports=no
+
+# Activate the evaluation score.
+score=yes
+
+[FORMAT]
+# Maximum number of characters on a single line.
+max-line-length=100
+
+# Regexp for a line that is allowed to be longer than the limit.
+#ignore-long-lines=^\s*(# )?<?https?://\S+>?$
+
+# Allow the body of an if to be on the same line as the test if there is no else.
+single-line-if-stmt=no
+
+# List of optional constructs for which whitespace checking is disabled. `dict-separator` means the colon in dicts, `trailing-comma` means trailing comma in lists, `empty-line` means the empty lines that pylint will check.
+#no-space-check=trailing-comma,dict-separator
+
+[BASIC]
+# Variable names can be 1 to 31 characters long, with lowercase and underscores
+variable-rgx=[a-z_][a-z0-9_]{0,30}$
+
+# Argument names can be 2 to 31 characters long, with lowercase and underscores
+argument-rgx=[a-z_][a-z0-9_]{0,30}$
+
+# Method names should be at least 3 characters long and be lowercase with underscores
+method-rgx=([a-z_][a-z0-9_]{2,}|setUp|tearDown)$
+
+# Module names matching lowercase with underscores
+module-rgx=([a-z_][a-z0-9_]+)$
+
+# Function names should be lowercase with underscores
+function-rgx=([a-z_][a-z0-9_]{2,})$
+
+# Class names should follow CamelCase naming
+class-rgx=[A-Z_][a-zA-Z0-9]+$
+
+# Interface names should follow CamelCase naming and end with 'Interface'
+# interface-rgx=[A-Z_][a-zA-Z0-9]+Interface$
+
+# Constant names matching uppercase with underscores
+const-rgx=(([A-Z_][A-Z0-9_]+)|(__.*__))$
+
+[TYPECHECK]
+ignored-modules=fnv
