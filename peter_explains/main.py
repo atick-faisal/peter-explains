@@ -9,6 +9,12 @@ from .utils import (
 
 
 async def main():
+    """
+    Main function to run the Peter Explains CLI.
+
+    This function is an async function that runs the main Peter Explains CLI.
+    It uses the asyncio library to run the main Peter Explains CLI.
+    """
     try:
         command = parse_arguments()
         tasks = [
@@ -25,6 +31,12 @@ async def main():
 
 
 def peter():
+    """
+    Function to run the Peter Explains CLI.
+
+    This function is the entry point for the Peter Explains CLI.
+    It runs the main function using the asyncio library.
+    """
     asyncio.run(main())
 
 

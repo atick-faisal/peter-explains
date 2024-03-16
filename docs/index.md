@@ -1,10 +1,10 @@
-## **peter: Your Linux Command Translator (Peter Griffin Edition)**
+## **`peter`: Your Linux Command Translator (Peter Griffin Edition)**
 
-![Banner](docs/assets/banner.png)
+![Banner](assets/banner.png)
 
 Hey Lois, ever wanted to understand those geeky Linux commands but were afraid you'd end up more confused than a monkey trying to do its taxes? Well, fear no more! `peter` is here to break down those brainy terminal things in a way even I can understand (well, mostly).
 
-![Demo](docs/assets/demo.gif)
+![Demo](assets/demo.gif)
 
 ### **How the Heck Does This Work?**
 
@@ -14,7 +14,7 @@ Hey Lois, ever wanted to understand those geeky Linux commands but were afraid y
 
 !!! tip "Help"
 
-    Run the following for help
+    Run the following to get help from Peter
 
     ``` bash
     peter --help
@@ -38,6 +38,20 @@ Hey Lois, ever wanted to understand those geeky Linux commands but were afraid y
     ```
 
     - (Recommended) Add this line to your `.bashrc` or `.zshrc`
+
+!!! tip "Quick Checkup"
+
+    Make sure everything is working by running the following
+
+    ```bash
+    peter --version
+    ```
+
+    Your should see something like this if installed correctly
+
+    ```bash
+    Peter Explains (peter) v0.0.5
+    ```
 
 ### **For the Brainiacs (a.k.a. Potential Contributors)**
 

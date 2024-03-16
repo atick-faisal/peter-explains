@@ -44,5 +44,21 @@ PROMPT = """
 
 
 async def explain_command(command: str) -> str:
+    """
+    Explain a Linux command in a JSON format suitable for use in a command-line tool.
+
+    This function uses the Google Generative AI model to explain a Linux command in a JSON format suitable for use in a command-line tool. It takes a Linux command as input and returns a JSON object with the following keys:
+    - command_name: The name of the Linux command
+    - purpose: A short, funny explanation of its purpose in Peter Griffin's voice.
+    - syntax: Basic command structure with optional placeholders for arguments (e.g., "command_name [options] <file_or_directory>")
+    - options: A few common options. Provide brief, humorous explanations for each.
+    - examples: 2-3 examples demonstrating the command's usage. Keep it simple and funny!
+
+    Args:
+    - command (str): The Linux command to explain.
+
+    Returns:
+    - str: A JSON object with the explanation of the Linux command.
+    """
     response = await model.generate_content_async(PROMPT.format(command=command))
     return response.text

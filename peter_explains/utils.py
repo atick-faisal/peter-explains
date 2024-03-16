@@ -30,6 +30,9 @@ error_messages = [
 
 
 def forgot_api_key():
+    """
+    Function to display a message when the API key is missing.
+    """
     print(
         Fore.RED
         + "Aw, c'mon! Where's the freakin' API key? You think this thing works by magic?"
@@ -46,7 +49,7 @@ def forgot_api_key():
         "3. Figure out this 'environment variable' stuff. Ask Meg, she's probably smarter than you."
     )
     print(
-        f"4. Meg said you gotta add {Fore.LIGHTBLUE_EX}export GOOGLE_API_KEY=<YOUR KEY>{Style.RESET_ALL} to your .bashrc or .zshrc or whatever ya got."
+        f"4. Meg said you gotta run {Fore.LIGHTBLUE_EX}export GOOGLE_API_KEY=<YOUR KEY>{Style.RESET_ALL}. Or better yet add that to your .bashrc or .zshrc or whatever ya got."
     )
     print("5. Shut up Meg!")
     print(
@@ -56,6 +59,14 @@ def forgot_api_key():
 
 
 def stylize_output(output: str) -> None:
+    """
+    Stylize the output of the Peter Explains CLI.
+
+    This function takes the output of the Peter Explains CLI and stylizes it for display in the terminal.
+
+    Args:
+    - output (str): The output of the Peter Explains CLI.
+    """
     data = json.loads(output)
 
     # Headers
@@ -78,6 +89,11 @@ def stylize_output(output: str) -> None:
 
 
 async def show_loading_message():
+    """
+    Show a loading message while the Peter Explains CLI is running.
+
+    This function uses the asyncio library to show a loading message while the Peter Explains CLI is running.
+    """
     for _ in range(5):
         await asyncio.sleep(3.0)
         print(loading_messages[random.randint(0, len(loading_messages) - 1)])
@@ -87,10 +103,20 @@ async def show_loading_message():
 
 
 def show_error_message():
+    """
+    Show an error message when the Peter Explains CLI encounters an error.
+
+    This function shows an error message when the Peter Explains CLI encounters an error.
+    """
     print(error_messages[random.randint(0, len(error_messages) - 1)])
 
 
 def display_peter_help():
+    """
+    Display the help message for the Peter Explains CLI.
+
+    This function displays the help message for the Peter Explains CLI.
+    """
     print(Fore.CYAN + "\nPeter Explains Linux (Kinda)" + Style.RESET_ALL)
     print(
         Fore.LIGHTBLACK_EX
@@ -114,6 +140,9 @@ def display_peter_help():
 
 
 def parse_arguments() -> str:
+    """
+    This function parses arguments fot the Peter Explains CLI.
+    """
     parser = argparse.ArgumentParser(
         description="Linux commands explained the Peter Griffin way. Seriously.",
         add_help=False,

@@ -1,0 +1,31 @@
+name: Docs
+
+on:
+    push:
+        branches:
+            - main
+        paths:
+            - "**/*"
+            - "!**/.github/workflows/**"
+
+jobs:
+    mkdocs:
+        runs-on: ubuntu-latest
+        timeout-minutes: 45
+
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v4
+              # https://github.com/mkdocs/mkdocs/issues/2370
+              with:
+                  fetch-depth: 0
+
+            - name: Generate Docs
+              run: |
+                  pip install mkdocs mkdocs-material mkdocstrings
+                  mkdocs build
+                  mkdocs gh-deploy
+
+# https://github.com/softprops/action-gh-release/issues/236
+permissions:
+    contents: write
