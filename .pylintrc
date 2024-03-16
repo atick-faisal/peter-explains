@@ -38,6 +38,7 @@ disable=missing-docstring,
         line-too-long,
         fixme,
         duplicate-code
+        broad-except 
 
 [REPORTS]
 # Python expression which should return a note less than 10. You have access to the variables errors warning, statement which respectively contain the number of errors / warnings messages and the total number of statements analyzed.

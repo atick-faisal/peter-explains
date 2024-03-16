@@ -12,7 +12,7 @@ setup(
     author="Atick Faisal",
     author_email="atickfaisal@gmail.com",
     packages=find_packages(),
-    install_requires=[],
+    install_requires=["colorama", "google-generativeai"],
     long_description=long_description,
     long_description_content_type="text/markdown",
     entry_points={
