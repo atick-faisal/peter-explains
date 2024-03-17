@@ -20,4 +20,6 @@ setup(
             "peter = peter_explains.main:peter",
         ],
     },
+    url="https://github.com/atick-faisal/peter-explains",
+    license="MIT",
 )
