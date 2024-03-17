@@ -1,4 +1,4 @@
-## **peter: Your Linux Command Translator (Peter Griffin Edition)**
+## **`peter`: Your Linux Command Translator (Peter Griffin Edition)**
 
 ![Banner](https://github.com/atick-faisal/peter-explains/blob/main/docs/assets/banner.png)
 
@@ -12,11 +12,11 @@ Hey Lois, ever wanted to understand those geeky Linux commands but were afraid y
 2. **I whip out my trusty Gemini AI translator:** This thing's smarter than Stewie after a bowl of spinach, and it'll turn that boring 'ls' command into a hilarious hot mess of an explanation.
 3. **You laugh (or groan), but hey, at least you learn somethin':** Maybe you'll actually remember what those commands do instead of just blindly copying stuff from the internet like a parrot.
 
-### Help
-
-    Run the following for help
-
-    $ peter --help
+<p align="center">
+    <a href="www.google.com">
+    <img src="https://github.com/atick-faisal/peter-explains/blob/main/docs/assets/docs.png" alt="Button description" width="400">
+    </a>
+</p>
 
 ### **Gettin' Started (For Dummies Like Me)**
 
@@ -35,11 +35,17 @@ Hey Lois, ever wanted to understand those geeky Linux commands but were afraid y
 
     - (Recommended) Add this line to your `.bashrc` or `.zshrc`
 
+### Help
+
+    Run the following for help
+
+    $ peter --help
+
 ### **For the Brainiacs (a.k.a. Potential Contributors)**
 
 Hey Meg, turns out even _I_ can't make this thing perfect on my own. If you're the type who knows their way around Python and AI, feel free to poke around the code and make it even funnier (or, dare I say, _educational_).
 
-### **Disclaimer**
+### **Disclaimer** <img src="https://github.com/atick-faisal/peter-explains/blob/main/docs/assets/meg.png" alt="Whatever" width="150" height="150" align="left">
 
 I ain't responsible if this tool makes you dumber, offends your delicate sensibilities, or causes your computer to explode. Use at your own risk, and remember: laughter is the best medicine... unless you're choking on a hot dog. Then you probably need a doctor.
 

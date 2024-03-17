@@ -57,7 +57,7 @@ Hey Lois, ever wanted to understand those geeky Linux commands but were afraid y
 
 Hey Meg, turns out even _I_ can't make this thing perfect on my own. If you're the type who knows their way around Python and AI, feel free to poke around the code and make it even funnier (or, dare I say, _educational_).
 
-### **Disclaimer**
+### **Disclaimer** <img src="assets/meg.png" alt="Whatever" width="150" height="150" align="left">
 
 I ain't responsible if this tool makes you dumber, offends your delicate sensibilities, or causes your computer to explode. Use at your own risk, and remember: laughter is the best medicine... unless you're choking on a hot dog. Then you probably need a doctor.
 
