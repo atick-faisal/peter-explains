@@ -18,7 +18,7 @@ Hey Lois, ever wanted to understand those geeky Linux commands but were afraid y
     </a>
 </p>
 
-### **Gettin' Started (For Dummies Like Me)**
+### **Gettin' Started (For Dummies Like Me)** <img src="https://github.com/atick-faisal/peter-explains/blob/main/docs/assets/apikey.png" alt="Whatever" width="250" align="right">
 
 1. **Make sure you got that pip thing installed:** You know, for downloading packages and stuff. If you don't, Lois help you.
 2. **Use pip to install this amazingness:** `pip install peter-explains`
@@ -26,7 +26,7 @@ Hey Lois, ever wanted to understand those geeky Linux commands but were afraid y
 
 ### Retep is gonna ruin your day if you try to use without the API KEY
 
-    Don't worry. Meg's here to help. You need Google Gemini API KEY
+    Don't worry. Meg's here to help. You need a FREE Google Gemini API KEY.
 
     - Get yours from here: [https://aistudio.google.com/app/](https://aistudio.google.com/app/)
     - Add the `API KEY` your Environment by running the following:

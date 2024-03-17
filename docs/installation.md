@@ -25,7 +25,7 @@ Alright folks, if you wanna get this hot mess of a tool onto your computer, pay 
 
 !!! warning "Retep is gonna ruin your day if you try to use without the API KEY"
 
-    Don't worry. Meg's here to help. You need Google Gemini API KEY
+    Don't worry. Meg's here to help. You need a FREE Google Gemini API KEY
 
     - Get yours from here: [https://aistudio.google.com/app/](https://aistudio.google.com/app/)
     - Add the `API KEY` your Environment by running the following:
