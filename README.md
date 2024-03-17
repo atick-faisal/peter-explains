@@ -12,12 +12,6 @@ Hey Lois, ever wanted to understand those geeky Linux commands but were afraid y
 2. **I whip out my trusty Gemini AI translator:** This thing's smarter than Stewie after a bowl of spinach, and it'll turn that boring 'ls' command into a hilarious hot mess of an explanation.
 3. **You laugh (or groan), but hey, at least you learn somethin':** Maybe you'll actually remember what those commands do instead of just blindly copying stuff from the internet like a parrot.
 
-<p align="center">
-    <a href="www.google.com">
-    <img src="https://github.com/atick-faisal/peter-explains/blob/main/docs/assets/docs.png" alt="Button description" width="400">
-    </a>
-</p>
-
 ### **Gettin' Started (For Dummies Like Me)** <img src="https://github.com/atick-faisal/peter-explains/blob/main/docs/assets/apikey.png" alt="Whatever" width="250" align="right">
 
 1. **Make sure you got that pip thing installed:** You know, for downloading packages and stuff. If you don't, Lois help you.
@@ -40,6 +34,14 @@ Hey Lois, ever wanted to understand those geeky Linux commands but were afraid y
     Run the following for help
 
     $ peter --help
+
+Need more?
+
+<p align="center">
+    <a href="http://atick.dev/peter-explains/">
+    <img src="https://github.com/atick-faisal/peter-explains/blob/main/docs/assets/docs.png" alt="Button description" width="400">
+    </a>
+</p>
 
 ### **For the Brainiacs (a.k.a. Potential Contributors)**
 
