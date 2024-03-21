@@ -1,10 +1,10 @@
 ## **`peter`: Your Linux Command Translator (Peter Griffin Edition)**
 
-![Banner](https://github.com/atick-faisal/peter-explains/blob/823cc63c9950a2f1e38b9aebdda8837d88e18d4c/docs/assets/banner.png)
+![Banner](docs/assets/banner.png)
 
 Hey Lois, ever wanted to understand those geeky Linux commands but were afraid you'd end up more confused than a monkey trying to do its taxes? Well, fear no more! `peter` is here to break down those brainy terminal things in a way even I can understand (well, mostly).
 
-![Demo](https://github.com/atick-faisal/peter-explains/blob/823cc63c9950a2f1e38b9aebdda8837d88e18d4c/docs/assets/demo.gif)
+![Demo](docs/assets/demo.gif)
 
 ### **How the Heck Does This Work?**
 
@@ -39,7 +39,7 @@ Need more?
 
 <p align="center">
     <a href="http://atick.dev/peter-explains/">
-    <img src="https://github.com/atick-faisal/peter-explains/blob/823cc63c9950a2f1e38b9aebdda8837d88e18d4c/docs/assets/docs.png" alt="Button description" width="400">
+    <img src="docs/assets/docs.png" alt="Button description" width="400">
     </a>
 </p>
 
