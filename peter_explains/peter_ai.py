@@ -105,15 +105,10 @@ async def explain_command(command: str) -> str:
     """
 
     if " " in command:  # Check if command includes arguments
-        print("Command includes arguments")
         prompt = PROMPT_WITH_ARGUMENTS.format(command=command)
     else:
         prompt = PROMPT_WITHOUT_ARGUMENTS.format(command=command)
 
     response = await model.generate_content_async(prompt)
-
-    # TODO: Catch erros in response
-
-    print(response)
 
     return response.text
