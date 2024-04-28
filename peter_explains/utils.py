@@ -1,5 +1,4 @@
 import sys
-import json
 import random
 import asyncio
 import argparse
