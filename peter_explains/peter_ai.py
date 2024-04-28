@@ -1,6 +1,5 @@
 import os
 import google.generativeai as genai
-from google.generativeai import GenerationConfig
 from .utils import forgot_api_key
 
 
