@@ -8,7 +8,7 @@ Hey Lois, ever wanted to understand those geeky Linux commands but were afraid y
 
 ### **How the Heck Does This Work?**
 
-1. **You type somethin' like:** `peter ls`
+1. **You type somethin' like:** `peter ls` or `peter "grep hello world.txt"`
 2. **I whip out my trusty Gemini AI translator:** This thing's smarter than Stewie after a bowl of spinach, and it'll turn that boring 'ls' command into a hilarious hot mess of an explanation.
 3. **You laugh (or groan), but hey, at least you learn somethin':** Maybe you'll actually remember what those commands do instead of just blindly copying stuff from the internet like a parrot.
 

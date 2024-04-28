@@ -170,10 +170,10 @@ def display_peter_help():
 
     print(Fore.YELLOW + "How to Use This Pile of Junk:" + Style.RESET_ALL)
     print(
-        "* Get an Explanation: Type 'peter' and then the name of that Linux thing you can't remember. Like, 'peter ls' or whatever.  I'll try my best to explain it in a way even you might understand."
+        "* Type 'peter' and then the name of that Linux thing you need explanation for. Like, 'peter ls' or whatever."
     )
     print(
-        "* Feeling Stupid? Get More Options:  If my explanation ain't enough (and let's be real, it probably won't be), try 'peter ls --options' for even more boring details.\n"
+        "* Feeling Stupid? Saw a fancy Linux command and don't know what it does? Type it inside \" \" like 'peter \"grep hello world.txt\"' \n"
     )
 
     print(Fore.YELLOW + "Other Useless Crap:" + Style.RESET_ALL)
@@ -185,7 +185,7 @@ def display_peter_help():
 
 def parse_arguments() -> str:
     """
-    This function parses arguments fot the Peter Explains CLI.
+    This function parses arguments for the Peter Explains CLI.
     """
     parser = argparse.ArgumentParser(
         description="Linux commands explained the Peter Griffin way. Seriously.",
@@ -198,10 +198,11 @@ def parse_arguments() -> str:
         "-h",
         "--help",
         action="store_true",
+        help="Display the help message",
     )
 
     parser.add_argument(
-        "explain_this", nargs="+", help="Explanation of the required argument"
+        "explain_this", nargs="?", help="Explanation of the required argument"
     )
 
     args = parser.parse_args()
@@ -218,4 +219,4 @@ def parse_arguments() -> str:
     # TODO: Add more argument validation here
 
     else:
-        return " ".join(args.explain_this).strip().lower()
+        return args.explain_this.strip().lower()
