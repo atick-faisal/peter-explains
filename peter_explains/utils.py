@@ -3,6 +3,7 @@ import json
 import random
 import asyncio
 import argparse
+import json_repair
 from colorama import Fore, Style
 from ._version import __version__
 
@@ -58,6 +59,9 @@ def forgot_api_key():
     sys.exit(0)
 
 
+# init()  # Initialize Colorama
+
+
 def stylize_output(output: str) -> None:
     """
     Stylize the output of the Peter Explains CLI.
@@ -67,25 +71,103 @@ def stylize_output(output: str) -> None:
     Args:
     - output (str): The output of the Peter Explains CLI.
     """
-    data = json.loads(output)
+    data = json_repair.loads(output)
+
 
     # Headers
-    print(Fore.CYAN + "\nCommand:" + Style.RESET_ALL + f" {data['command_name']}\n")
+    print(Fore.CYAN + "\nCommand:" + Style.RESET_ALL + Style.BRIGHT + f" {data['command_name']}" + Style.RESET_ALL +"\n")
     print(Fore.YELLOW + "Purpose:" + Style.RESET_ALL + f" {data['purpose']}\n")
 
     # Syntax
-    print(Fore.YELLOW + "Syntax:" + Style.RESET_ALL)
-    print(Fore.LIGHTBLACK_EX + data["syntax"] + Style.RESET_ALL + "\n")  # Dimmed syntax
+    if "syntax" in data:  # Scenario 1: Full command explanation
+        print(Fore.YELLOW + "Syntax:" + Style.RESET_ALL)
+        # Colorama doesn't have built-in syntax highlighting, keep plain text here
+        print(data["syntax"] + Style.RESET_ALL + "\n")
 
-    # Options
-    print(Fore.YELLOW + "Options:" + Style.RESET_ALL)
-    for option, description in data["options"].items():
-        print(f"* {option}: {description}")
+        # Options
+        print(Fore.YELLOW + "Options:" + Style.RESET_ALL)
+        for option in data["options"]:
+            print(Fore.BLUE + f"* {option}" + Style.RESET_ALL)
 
-    # Examples
-    print(Fore.YELLOW + "\nExamples:" + Style.RESET_ALL)
-    for example in data["examples"]:
-        print(Fore.GREEN + "* " + example + Style.RESET_ALL)
+        # Examples
+        print(Fore.YELLOW + "\nExamples:" + Style.RESET_ALL)
+        for example in data["examples"]:
+            print(Fore.GREEN + "* " + example + Style.RESET_ALL)
+
+    elif "breakdown" in data:  # Scenario 2: Command with arguments breakdown
+        print(Fore.YELLOW + "\nBreakdown:" + Style.RESET_ALL)
+        for explanation in data["breakdown"]:
+            print(Fore.BLUE + f"* {explanation}" + Style.RESET_ALL)
+
+
+# console = Console()
+
+
+# def stylize_output(output: str) -> None:
+#     """
+#     Stylize the output of the Peter Explains CLI.
+
+#     This function takes the output of the Peter Explains CLI and stylizes it for display in the terminal.
+
+#     Args:
+#     - output (str): The output of the Peter Explains CLI.
+#     """
+#     data = json.loads(output)
+
+#     # Headers
+#     console.print(f"[bold cyan]Command:[/] {data['command_name']}")
+#     console.print(f"[bold yellow]Purpose:[/] {data['purpose']}")
+
+#     if "syntax" in data:  # Scenario 1: Full command explanation
+#         # Syntax
+#         syntax = Syntax(data["syntax"], theme="onedark" "bash", line_numbers=False)
+#         console.print("\n[bold yellow]Syntax:[/]")
+#         console.print(syntax)
+
+#         # Options
+#         console.print("\n[bold yellow]Options:[/]")
+#         for option, description in data["options"].items():
+#             console.print(f"* {option}: {description}")
+
+#         # Examples
+#         console.print("\n[bold yellow]Examples:[/]")
+#         for example in data["examples"]:
+#             console.print(f"* [green]{example}[/]")
+
+#     elif "breakdown" in data:  # Scenario 2: Command with arguments breakdown
+#         console.print("\n[bold yellow]Breakdown:[/]")
+#         for part, explanation in data["breakdown"]:
+#             console.print(f"* [bold]{part}:[/] {explanation}")
+
+
+# def stylize_output(output: str) -> None:
+#     """
+#     Stylize the output of the Peter Explains CLI.
+
+#     This function takes the output of the Peter Explains CLI and stylizes it for display in the terminal.
+
+#     Args:
+#     - output (str): The output of the Peter Explains CLI.
+#     """
+#     data = json.loads(output)
+
+#     # Headers
+#     print(Fore.CYAN + "\nCommand:" + Style.RESET_ALL + f" {data['command_name']}\n")
+#     print(Fore.YELLOW + "Purpose:" + Style.RESET_ALL + f" {data['purpose']}\n")
+
+#     # Syntax
+#     print(Fore.YELLOW + "Syntax:" + Style.RESET_ALL)
+#     print(Fore.LIGHTBLACK_EX + data["syntax"] + Style.RESET_ALL + "\n")  # Dimmed syntax
+
+#     # Options
+#     print(Fore.YELLOW + "Options:" + Style.RESET_ALL)
+#     for option, description in data["options"].items():
+#         print(f"* {option}: {description}")
+
+#     # Examples
+#     print(Fore.YELLOW + "\nExamples:" + Style.RESET_ALL)
+#     for example in data["examples"]:
+#         print(Fore.GREEN + "* " + example + Style.RESET_ALL)
 
 
 async def show_loading_message():
@@ -117,7 +199,7 @@ def display_peter_help():
 
     This function displays the help message for the Peter Explains CLI.
     """
-    print(Fore.CYAN + "\nPeter Explains Linux (Kinda)" + Style.RESET_ALL)
+    print(Fore.CYAN + "\nPeter Explains Linux (kinda)" + Style.RESET_ALL)
     print(
         Fore.LIGHTBLACK_EX
         + "Hey numbnuts, looks like you need help figurin' out this thing. Here's the deal:\n"
@@ -157,7 +239,7 @@ def parse_arguments() -> str:
     )
 
     parser.add_argument(
-        "required_argument", nargs="?", help="Explanation of the required argument"
+        "explain_this", nargs="+", help="Explanation of the required argument"
     )
 
     args = parser.parse_args()
@@ -167,11 +249,14 @@ def parse_arguments() -> str:
         sys.exit(0)
 
     # Handle missing required argument
-    if not args.required_argument:
+    if not args.explain_this:
         display_peter_help()
         sys.exit(0)
 
     # TODO: Add more argument validation here
 
+    
+
     else:
-        return args.required_argument.strip().lower()
+        print(f"Required Argument: {' '.join(args.explain_this).strip().lower() }")
+        return ' '.join(args.explain_this).strip().lower() 

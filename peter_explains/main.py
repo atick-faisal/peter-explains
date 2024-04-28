@@ -15,19 +15,25 @@ async def main():
     This function is an async function that runs the main Peter Explains CLI.
     It uses the asyncio library to run the main Peter Explains CLI.
     """
-    try:
-        command = parse_arguments()
-        tasks = [
-            asyncio.create_task(show_loading_message()),
-            asyncio.create_task(explain_command(command)),
-        ]
-        done, pending = await asyncio.wait(tasks, return_when=asyncio.FIRST_COMPLETED)
+    # try:
+    command = parse_arguments()
+    # tasks = [
+    #     asyncio.create_task(show_loading_message()),
+    #     asyncio.create_task(explain_command(command)),
+    # ]
+    # done, pending = await asyncio.wait(tasks, return_when=asyncio.FIRST_COMPLETED)
 
-        pending.pop().cancel()  # Cancel the loading message task
-        result = done.pop().result()  # Get the result of the explain_command task
-        stylize_output(result)
-    except Exception as _:
-        show_error_message()
+    # pending.pop().cancel()  # Cancel the loading message task
+    # result = done.pop().result()  # Get the result of the explain_command task
+
+
+    result = await explain_command(command)
+
+    stylize_output(result)
+    # except Exception as e:
+    #     #  print stack trace
+    #     print(e)
+    #     show_error_message()
 
 
 def peter():
