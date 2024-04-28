@@ -1,3 +1,4 @@
+import os
 import sys
 import random
 import asyncio
@@ -27,6 +28,34 @@ error_messages = [
     "Aw jeez, I think I broke it. Don't tell Lois, she'll make me fix it.",
     "I swear, this thing's got more bugs than the Griffin house. And that's sayin' somethin'.",
 ]
+
+
+def get_cache_dir(app_name):
+    """
+    This function gets the cache directory for the Peter Explains CLI based on the operating system.
+
+    Args:
+    - app_name (str): The name of the Peter Explains CLI.
+
+    Returns:
+    - cache_dir (str): The cache directory for the Peter Explains CLI.
+    """
+    if os.name == "nt":  # Windows
+        cache_dir = os.path.join(os.getenv("LOCALAPPDATA"), app_name, "cache")
+    elif os.name == "posix":
+        home = os.path.expanduser("~")
+        if sys.platform == "darwin":  # macOS
+            cache_dir = os.path.join(
+                home, "Library", "Application Support", app_name, "cache"
+            )
+        else:  # Linux and other UNIX like
+            cache_dir = os.path.join(home, ".config", app_name, "cache")
+    else:
+        cache_dir = app_name
+
+    os.makedirs(cache_dir, exist_ok=True)
+
+    return cache_dir
 
 
 def forgot_api_key():
