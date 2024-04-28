@@ -59,9 +59,6 @@ def forgot_api_key():
     sys.exit(0)
 
 
-# init()  # Initialize Colorama
-
-
 def stylize_output(output: str) -> None:
     """
     Stylize the output of the Peter Explains CLI.
@@ -73,14 +70,21 @@ def stylize_output(output: str) -> None:
     """
     data = json_repair.loads(output)
 
-
     # Headers
-    print(Fore.CYAN + "\nCommand:" + Style.RESET_ALL + Style.BRIGHT + f" {data['command_name']}" + Style.RESET_ALL +"\n")
-    print(Fore.YELLOW + "Purpose:" + Style.RESET_ALL + f" {data['purpose']}\n")
+    print(
+        Fore.CYAN
+        + "\nCommand:"
+        + Style.RESET_ALL
+        + Style.BRIGHT
+        + f" {data['command_name']}"
+        + Style.RESET_ALL
+        + "\n"
+    )
+    print(Fore.YELLOW + "Purpose:\n" + Style.RESET_ALL + f"{data['purpose']}")
 
     # Syntax
     if "syntax" in data:  # Scenario 1: Full command explanation
-        print(Fore.YELLOW + "Syntax:" + Style.RESET_ALL)
+        print(Fore.YELLOW + "\nSyntax:" + Style.RESET_ALL)
         # Colorama doesn't have built-in syntax highlighting, keep plain text here
         print(data["syntax"] + Style.RESET_ALL + "\n")
 
@@ -97,77 +101,7 @@ def stylize_output(output: str) -> None:
     elif "breakdown" in data:  # Scenario 2: Command with arguments breakdown
         print(Fore.YELLOW + "\nBreakdown:" + Style.RESET_ALL)
         for explanation in data["breakdown"]:
-            print(Fore.BLUE + f"* {explanation}" + Style.RESET_ALL)
-
-
-# console = Console()
-
-
-# def stylize_output(output: str) -> None:
-#     """
-#     Stylize the output of the Peter Explains CLI.
-
-#     This function takes the output of the Peter Explains CLI and stylizes it for display in the terminal.
-
-#     Args:
-#     - output (str): The output of the Peter Explains CLI.
-#     """
-#     data = json.loads(output)
-
-#     # Headers
-#     console.print(f"[bold cyan]Command:[/] {data['command_name']}")
-#     console.print(f"[bold yellow]Purpose:[/] {data['purpose']}")
-
-#     if "syntax" in data:  # Scenario 1: Full command explanation
-#         # Syntax
-#         syntax = Syntax(data["syntax"], theme="onedark" "bash", line_numbers=False)
-#         console.print("\n[bold yellow]Syntax:[/]")
-#         console.print(syntax)
-
-#         # Options
-#         console.print("\n[bold yellow]Options:[/]")
-#         for option, description in data["options"].items():
-#             console.print(f"* {option}: {description}")
-
-#         # Examples
-#         console.print("\n[bold yellow]Examples:[/]")
-#         for example in data["examples"]:
-#             console.print(f"* [green]{example}[/]")
-
-#     elif "breakdown" in data:  # Scenario 2: Command with arguments breakdown
-#         console.print("\n[bold yellow]Breakdown:[/]")
-#         for part, explanation in data["breakdown"]:
-#             console.print(f"* [bold]{part}:[/] {explanation}")
-
-
-# def stylize_output(output: str) -> None:
-#     """
-#     Stylize the output of the Peter Explains CLI.
-
-#     This function takes the output of the Peter Explains CLI and stylizes it for display in the terminal.
-
-#     Args:
-#     - output (str): The output of the Peter Explains CLI.
-#     """
-#     data = json.loads(output)
-
-#     # Headers
-#     print(Fore.CYAN + "\nCommand:" + Style.RESET_ALL + f" {data['command_name']}\n")
-#     print(Fore.YELLOW + "Purpose:" + Style.RESET_ALL + f" {data['purpose']}\n")
-
-#     # Syntax
-#     print(Fore.YELLOW + "Syntax:" + Style.RESET_ALL)
-#     print(Fore.LIGHTBLACK_EX + data["syntax"] + Style.RESET_ALL + "\n")  # Dimmed syntax
-
-#     # Options
-#     print(Fore.YELLOW + "Options:" + Style.RESET_ALL)
-#     for option, description in data["options"].items():
-#         print(f"* {option}: {description}")
-
-#     # Examples
-#     print(Fore.YELLOW + "\nExamples:" + Style.RESET_ALL)
-#     for example in data["examples"]:
-#         print(Fore.GREEN + "* " + example + Style.RESET_ALL)
+            print(Fore.GREEN + f"* {explanation}" + Style.RESET_ALL)
 
 
 async def show_loading_message():
@@ -176,7 +110,7 @@ async def show_loading_message():
 
     This function uses the asyncio library to show a loading message while the Peter Explains CLI is running.
     """
-    for _ in range(5):
+    for _ in range(10):
         await asyncio.sleep(3.0)
         print(loading_messages[random.randint(0, len(loading_messages) - 1)])
 
@@ -255,8 +189,5 @@ def parse_arguments() -> str:
 
     # TODO: Add more argument validation here
 
-    
-
     else:
-        print(f"Required Argument: {' '.join(args.explain_this).strip().lower() }")
-        return ' '.join(args.explain_this).strip().lower() 
+        return " ".join(args.explain_this).strip().lower()
