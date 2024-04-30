@@ -1,15 +1,13 @@
 import asyncio
-from diskcache import Cache
-from .peter_ai import explain_command
-from .utils import (
-    parse_arguments,
-    stylize_output,
+
+from peter_explains.peter_ai import PeterAi
+from peter_explains.cache import PeterCache
+from peter_explains.args import parse_arguments
+from peter_explains.format import pretty_print_result
+from peter_explains.utils import (
     show_loading_message,
     show_error_message,
-    get_cache_dir,
 )
-
-cache = Cache(get_cache_dir("peter_explains"))
 
 
 async def main():
@@ -19,18 +17,21 @@ async def main():
     This function is an async function that runs the main Peter Explains CLI.
     It uses the asyncio library to run the main Peter Explains CLI.
     """
+
     try:
         command = parse_arguments()
+        peter_ai = PeterAi(model_name="gemini-pro")
+        cache = PeterCache()
 
         result = None
 
         if command in cache:  # Check in cache
-            result = cache[command]
+            result = cache.get(command)
 
         else:
             tasks = [
                 asyncio.create_task(show_loading_message()),
-                asyncio.create_task(explain_command(command)),
+                asyncio.create_task(peter_ai.explain_command(command)),
             ]
             done, pending = await asyncio.wait(
                 tasks, return_when=asyncio.FIRST_COMPLETED
@@ -39,12 +40,12 @@ async def main():
             pending.pop().cancel()  # Cancel the loading message task
             result = done.pop().result()  # Get the result of the explain_command task
 
-            cache[command] = result  # Save in cache
+            cache.save(command, result)  # Save in cache
 
-        stylize_output(result)
+        pretty_print_result(result)
 
-    except Exception:
-        show_error_message()
+    except Exception as e:
+        show_error_message(e)
 
 
 def peter():
