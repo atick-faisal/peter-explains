@@ -34,7 +34,8 @@ class CommandExplanation:
             CommandExplanation: The CommandExplanation object created from the response.
 
         """
-        data = json_repair.loads(response)
+        json_body = response[response.find("{") : response.rfind("}") + 1]
+        data = json_repair.loads(json_body)
         return CommandExplanation(
             command=data["command_name"],
             purpose=data["purpose"],
@@ -72,7 +73,8 @@ class CommandExplanationWithArguments:
             CommandExplanationWithArguments: The CommandExplanationWithArguments object created from the response.
 
         """
-        data = json_repair.loads(response)
+        json_body = response[response.find("{") : response.rfind("}") + 1]
+        data = json_repair.loads(json_body)
         return CommandExplanationWithArguments(
             command=data["command_name"],
             purpose=data["purpose"],

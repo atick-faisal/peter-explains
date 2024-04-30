@@ -1,18 +1,25 @@
 from pathlib import Path
 from setuptools import setup, find_packages
 from peter_explains import _version
+from peter_explains import _name
 
 this_directory = Path(__file__).parent
 long_description = (this_directory / "README.md").read_text()
 
 setup(
-    name="peter-explains",
+    name=_name.app_name,
     version=_version.__version__,
     description="Linux command explanations from Peter Griffin",
     author="Atick Faisal",
     author_email="atickfaisal@gmail.com",
     packages=find_packages(),
-    install_requires=["keyring", "colorama", "diskcache", "json_repair", "google-generativeai"],
+    install_requires=[
+        "keyring",
+        "colorama",
+        "diskcache",
+        "json_repair",
+        "google-generativeai",
+    ],
     long_description=long_description,
     long_description_content_type="text/markdown",
     entry_points={

@@ -55,16 +55,21 @@ def parse_arguments():
 
     args = parser.parse_args()
 
+    # Handle API key operations
+    google_api_key = GoogleApiKey()
+
     if args.api:
-        GoogleApiKey.set(args.api)
+        google_api_key.set(args.api)
         sys.exit(0)
 
     if args.delete_api:
-        GoogleApiKey.clear()
+        google_api_key.clear()
         sys.exit(0)
 
+    # Handle cache operations
+    cache = PeterCache()
+
     if args.delete_cache:
-        cache = PeterCache()
         cache.clear()
         sys.exit(0)
 

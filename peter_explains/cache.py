@@ -2,37 +2,41 @@ import os
 import sys
 from diskcache import Cache
 
+from peter_explains._name import app_name
+
 
 class PeterCache:
-    APP_NAME = "peter_explains"
+    """
+    This class provides methods to interact with the cache for the Peter Explains CLI.
+    """
 
     def __init__(self):
         """
         Initializes the PeterCache class.
         """
-        self.cache = Cache(self.get_cache_dir(self.APP_NAME))
+        self.cache = Cache(self.get_cache_dir(app_name))
 
     @staticmethod
-    def get_cache_dir(app_name) -> str:
+    def get_cache_dir(cache_dir_name: str) -> str:
         """
         This function gets the cache directory for the Peter Explains CLI based on the operating system.
 
         Args:
-        - app_name (str): The name of the Peter Explains CLI.
+        - cache_dir_name (str): The name of the Peter Explains CLI cache directory.
 
         Returns:
         - cache_dir (str): The cache directory for the Peter Explains CLI.
         """
         if os.name == "nt":
-            cache_dir = os.path.join(os.getenv("LOCALAPPDATA"), app_name, "cache")
+            cache_dir = os.path.join(os.getenv("LOCALAPPDATA"), cache_dir_name, "cache")
         elif os.name == "posix":
             home = os.path.expanduser("~")
             if sys.platform == "darwin":
                 cache_dir = os.path.join(
-                    home, "Library", "Application Support", app_name, "cache"
+                    home, "Library", "Application Support", cache_dir_name, "cache"
                 )
             else:
-                cache_dir = os.path.join(home, ".config", app_name, "cache")
+                cache_dir = os.path.join(home, ".config", cache_dir_name, "cache")
 
         return cache_dir
 
