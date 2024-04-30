@@ -1,4 +1,5 @@
-import sys, argparse
+import sys
+import argparse
 
 from peter_explains.api_key import GoogleApiKey
 from peter_explains.cache import PeterCache

@@ -22,6 +22,7 @@ class CommandExplanation:
     options: list[str]
     examples: list[str]
 
+    @staticmethod
     def from_response(response: str) -> "CommandExplanation":
         """
         Creates a CommandExplanation object from a response string.
@@ -59,6 +60,7 @@ class CommandExplanationWithArguments:
     purpose: str
     breakdown: list[str]
 
+    @staticmethod
     def from_response(response: str) -> "CommandExplanationWithArguments":
         """
         Creates a CommandExplanationWithArguments object from a response string.
