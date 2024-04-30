@@ -20,7 +20,7 @@ class PeterAi:
         Returns:
         - None
         """
-        api_key = GoogleApiKey.get()
+        api_key = GoogleApiKey().get()
         self.safety_settings = [
             {
                 "category": "HARM_CATEGORY_DANGEROUS",

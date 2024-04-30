@@ -5,3 +5,5 @@ setuptools
 mkdocs
 mkdocs-material
 mkdocstrings-python
+pytest
+pytest-console-scripts

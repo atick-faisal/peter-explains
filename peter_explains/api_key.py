@@ -1,10 +1,13 @@
+import os
 import sys
-import keyring
+import json
+
 from peter_explains.utils import (
     show_no_api_key_error,
     show_crappy_api_key_error,
     show_api_key_success_message,
 )
+from peter_explains._name import app_name
 
 
 class GoogleApiKey:
@@ -12,46 +15,73 @@ class GoogleApiKey:
     This class provides methods to get and set the Google AI platform API key.
     """
 
-    SERVICE_NAME = "peter_ai"
-    KEY_NAME = "google_api_key"
+    def __init__(self) -> None:
+        self.api_key_path = GoogleApiKey.get_api_ley_file_path()
 
     @staticmethod
-    def get() -> str:
-        """
-        This function retrieves the API key from the keyring.
+    def get_api_ley_file_path() -> str:
+        if os.name == "nt":
+            api_file_path = os.path.join(
+                os.getenv("LOCALAPPDATA"), app_name, f"{app_name}_api.json"
+            )
+        elif os.name == "posix":
+            home = os.path.expanduser("~")
+            if sys.platform == "darwin":
+                api_file_path = os.path.join(
+                    home,
+                    "Library",
+                    "Application Support",
+                    app_name,
+                    f"{app_name}_api.json",
+                )
+            else:
+                api_file_path = os.path.join(
+                    home, ".config", app_name, f"{app_name}_api.json"
+                )
 
-        Args:
-        None
+        return api_file_path
+
+    def get(self) -> str:
+        """
+        Retrieves the API key from the specified file.
 
         Returns:
-        str: The API key for the Google AI platform.
+            str: The API key.
+
+        Raises:
+            FileNotFoundError: If the API key file does not exist.
         """
-        api_key = keyring.get_password(GoogleApiKey.SERVICE_NAME, GoogleApiKey.KEY_NAME)
-        if api_key is None:
+        if not os.path.exists(self.api_key_path):
             show_no_api_key_error()
             sys.exit(1)
-        return api_key
 
-    @staticmethod
-    def set(api_key: str):
+        with open(self.api_key_path, "r", encoding="utf-8") as file:
+            data = json.load(file)
+            return data["api_key"]
+
+    def set(self, api_key: str):
         """
-        This function sets the API key in the keyring.
+        Sets the API key for the application.
 
         Args:
-        - api_key (str): The API key for the Google AI platform.
+            api_key (str): The API key to be set.
+
+        Raises:
+            ValueError: If the length of the API key is less than 30 or greater than 50.
 
         Returns:
-        None
+            None
         """
         if len(api_key) < 30 or len(api_key) > 50:
             show_crappy_api_key_error()
             sys.exit(1)
 
-        keyring.set_password(GoogleApiKey.SERVICE_NAME, GoogleApiKey.KEY_NAME, api_key)
+        with open(self.api_key_path, "w", encoding="utf-8") as file:
+            json.dump({"api_key": api_key}, file)
         show_api_key_success_message()
+        sys.exit(0)
 
-    @staticmethod
-    def clear():
+    def clear(self):
         """
         This function clears the API key from the keyring.
 
@@ -61,5 +91,5 @@ class GoogleApiKey:
         Returns:
         None
         """
-        keyring.delete_password(GoogleApiKey.SERVICE_NAME, GoogleApiKey.KEY_NAME)
+        os.remove(self.api_key_path)
         print("Retep just deleted your API key. Loser!")

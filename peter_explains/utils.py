@@ -57,7 +57,7 @@ def show_error_message(e: Exception):
     This function shows an error message when the Peter Explains CLI encounters an error.
     """
     print(Fore.RED + ErrorMessage.get_random_message() + Style.RESET_ALL)
-    print(Fore.CYAN + "\nFor yo neds...\n" + "-" * 15 + Style.RESET_ALL)
+    print(Fore.CYAN + "\nFor yo nerds...\n" + "-" * 15 + Style.RESET_ALL)
     print(e)
 
 
