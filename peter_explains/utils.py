@@ -88,8 +88,8 @@ def show_peter_help():
         + "* --api [API_KEY]: Gotta do it before doin anythihg stupid."
         + Style.RESET_ALL
     )
-    print("* --clear-api: Screwd up API key? Go remove it it with this. You're welcome.")
-    print("* --clear-cache: Wanna start fresh? Try this one.")
+    print("* --delete-api: Screwd up API key? Go remove it it with this. You're welcome.")
+    print("* --delete-cache: Wanna start fresh? Try this one.")
     print("* --help: Yeah, yeah, that's what you're lookin' at right now, genius.")
     print(
         "* --version: Who cares what version this is?  It ain't gonna work right anyway.\n"

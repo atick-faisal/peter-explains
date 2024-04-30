@@ -1,4 +1,5 @@
-import os, sys
+import os
+import sys
 from diskcache import Cache
 
 
@@ -32,20 +33,20 @@ class PeterCache:
                 )
             else:
                 cache_dir = os.path.join(home, ".config", app_name, "cache")
-        
+
         return cache_dir
 
     def __contains__(self, key):
-            """
-            Check if the cache contains a specific key.
+        """
+        Check if the cache contains a specific key.
 
-            Args:
-                key: The key to check.
+        Args:
+            key: The key to check.
 
-            Returns:
-                True if the cache contains the key, False otherwise.
-            """
-            return key in self.cache
+        Returns:
+            True if the cache contains the key, False otherwise.
+        """
+        return key in self.cache
 
     def save(self, key, value):
         """
