@@ -7,7 +7,7 @@ this_directory = Path(__file__).parent
 long_description = (this_directory / "README.md").read_text()
 
 setup(
-    name=_name.app_name,
+    name=_name.__app_name__,
     version=_version.__version__,
     description="Linux command explanations from Peter Griffin",
     author="Atick Faisal",

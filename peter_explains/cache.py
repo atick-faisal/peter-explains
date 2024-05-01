@@ -2,7 +2,7 @@ import os
 import sys
 from diskcache import Cache
 
-from peter_explains._name import app_name
+from peter_explains._name import __app_name__
 
 
 class PeterCache:
@@ -14,7 +14,7 @@ class PeterCache:
         """
         Initializes the PeterCache class.
         """
-        self.cache = Cache(self.get_cache_dir(app_name))
+        self.cache = Cache(self.get_cache_dir(__app_name__))
 
     @staticmethod
     def get_cache_dir(cache_dir_name: str) -> str:
