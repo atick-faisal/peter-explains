@@ -1,9 +1,18 @@
-black
-pylint
-twine
+# build tools
+wheel
 setuptools
+
+# linting
+pylint
+
+# documentation
 mkdocs
 mkdocs-material
 mkdocstrings-python
+
+# testing
 pytest
 pytest-console-scripts
+
+# packaging
+twine

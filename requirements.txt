@@ -1,4 +1,3 @@
-keyring
 colorama
 diskcache
 json_repair
