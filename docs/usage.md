@@ -7,44 +7,73 @@ Alright, so you actually installed this thing. Big whoop. If you think it'll be 
 To get an explanation for a Linux command, type `peter` followed by the command name. Like this:
 
 ```bash
-peter ls
+ $ peter grep
 ```
 
-This will spit out some text that kinda-sorta explains what the `ls` command does, with a healthy dose of insults and comparisons to things even dumber than you are.
+This will spit out some text that kinda-sorta explains what the `grep` command does, with a healthy dose of insults and comparisons to things even dumber than you are.
 
 ### Getting Fancy (For Overachievers)
 
-Wanna look like a real computer nerd, huh? Here are some other things you can do:
+Saw linux command and wanna know what it does. Wrap it with those `" "` thingies after `peter`:
 
--   **Explain Options:** Throw `--options` at the end of the command to get even more boring details about the command's options (if I've bothered to write explanations for them).
 
-    ```bash
-    peter grep --options
-    ```
+```bash
+$ peter "sudo rm -rf /"
+```
 
--   **Help!:** Use `--help` to display a list of all these amazing features (and to re-read the insults I wrote for ya).
+### Getting Help
+Use `--help` to display a list of all these amazing features (and to re-read the insults I wrote for ya).
 
-    ```bash
-    peter --help
-    ```
+```bash
+$ peter --help
+```
 
 ### Examples (Because Even I Can't Mess These Up)
 
--   **Explaining 'ls':**
+-   **Explaining a Command _Without_ Any Arguments:**
 
-    ```bash
-    peter ls
-    ```
+    !!! example "Get Explanation for `ls`"
+        ``` bash
+        $ peter ls
+        ```
+        That gonna give you something like this:
+        ```
+        Purpose:
+        Ya, this one shows ya what's in a folder, if ya can make heads or tails of its weird output.
 
-    Output: _Something about listing files and folders, and how it's like going through Lois's underwear drawer – messy and pointless._
+        Syntax:
+        ls [options] [folder]
 
--   **Explaining 'grep' (with options):**
+        Options:
+        * -a: Shows ya all the files, even the ones that are hiding like sneaky lil' weasels.
+        * -l: Details, details... gives ya more info than ya probably care about.
 
-    ```bash
-    peter grep --options
-    ```
+        Examples:
+        * ls: Hey Lois, check this out! It's like an inventory of what's in this folder.
+        * ls -a: Look Lois, it even found my secret stash of chocolate chip cookies! Where'd they come from?
+        * ls /home/peter: Lois, quit hiding my bowling ball! I can see it right here in my home folder.
+        ```
 
-    Output: _A bunch of stuff about searchin' through text that'll bore you to tears. Might mention how it's still easier than finding anything in Stewie's room._
+-   **Explaining a Command _With_ Any Arguments:**
+
+    !!! example "Get Explanation for `sudo rm -rf /`"
+
+        ```bash
+        $ peter "sudo rm -rf /"
+        ```
+        And you get something like...
+        ```
+        Command: sudo rm -rf /
+
+        Purpose:
+        Oh my giddy aunt! This here command's gonna obliterate everything on your computer! It's like nuking your house to get rid of that pesky spider.
+
+        Breakdown:
+        * sudo: This tells your computer, 'Listen up, I'm the boss, do what I say.' It's like usin' your 'rents' credit card.
+        * rm: This is the wrecking ball, the 'get rid of it' command.
+        * -rf: These flags tell 'rm' to go crazy, like a Tasmanian devil on steroids. '-r' means recursive, diggin' into every nook and cranny, and '-f' means force, no askin' for permission.
+        * /: This little fella means the root directory, the big boss of all directories. It's like sayin', 'Delete everythin' from the top down.'
+        ```
 
 ### Disclaimer (So You Don't Sue This Idiot)
 

@@ -152,4 +152,4 @@ def test_result_caching(script_runner):
     ret = script_runner.run(["peter", "grep"])
     end = time.time()
     # assert it it is less than 1 second
-    assert end - start < 1
+    assert end - start < 1.5

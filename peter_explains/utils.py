@@ -54,7 +54,8 @@ def show_error_message(e: Exception):
     """
     Show an error message when the Peter Explains CLI encounters an error.
 
-    This function shows an error message when the Peter Explains CLI encounters an error.
+    Args:
+        e (Exception): The exception that was raised.
     """
     print(Fore.RED + ErrorMessage.get_random_message() + Style.RESET_ALL)
     print(Fore.CYAN + "\nFor yo nerds...\n" + "-" * 15 + Style.RESET_ALL)

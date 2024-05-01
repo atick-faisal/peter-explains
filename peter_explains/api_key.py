@@ -86,10 +86,10 @@ class GoogleApiKey:
         This function clears the API key from the keyring.
 
         Args:
-        None
+            None
 
         Returns:
-        None
+            None
         """
         os.remove(self.api_key_path)
         print("Retep just deleted your API key. Loser!")

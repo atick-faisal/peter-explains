@@ -1,4 +1,4 @@
-## Installing Peter Explains Linux (For Dummies)
+## Installing Peter Explains (For Dummies)
 
 Alright folks, if you wanna get this hot mess of a tool onto your computer, pay attention. It shouldn't be harder than setting up a VCR (but then again, who even uses those anymore?).
 
@@ -18,23 +18,30 @@ Alright folks, if you wanna get this hot mess of a tool onto your computer, pay 
 2. **Run This Magical Command:** Type the following, then hit Enter:
 
     ```bash
-    pip install peter-explains
+    $ pip install peter-explains
     ```
-
     This tells PIP to fetch the 'peter-explains' package and install it for ya. Ain't technology amazing?
+3. **Set the API Key:** Get one o those for free from [here](https://aistudio.google.com/app/). The run:
+``` bash
+$ peter --api <YOUR_API_KEY>
+```
 
-!!! warning "Retep is gonna ruin your day if you try to use without the API KEY"
+!!! warning
+    ### Retep is gonna ruin your day if you try to use it without the API KEY
+   
+        Don't worry. Meg's here to help. You need a FREE Google Gemini API KEY.
+   
+        - Get yours from here: [https://aistudio.google.com/app/](https://aistudio.google.com/app/)
+        - Save the `API KEY` to your Environment by running the following:
+   
+          $ peter --api <YOUR_API_KEY>
 
-    Don't worry. Meg's here to help. You need a FREE Google Gemini API KEY
-
-    - Get yours from here: [https://aistudio.google.com/app/](https://aistudio.google.com/app/)
-    - Add the `API KEY` your Environment by running the following:
-
-    ```bash
-      export GOOGLE_API_KEY=YOUR_KEY
+!!! tip
+    If yo dumbass scews up setting the API key, run the following to delete it and try setting it up again.
+    ``` bash
+    $ peter --delete-api
+    $ peter --api <YOUR_CORRECT_API_KEY>
     ```
-
-    - (Recommended) Add this line to your `.bashrc` or `.zshrc`
 
 #### Option 2: From Source (For Masochists)
 
@@ -42,7 +49,7 @@ Alright folks, if you wanna get this hot mess of a tool onto your computer, pay 
 2. **Installin' Time:** Navigate to your cloned directory in your terminal, then run this:
 
     ```bash
-    pip install .
+    $ pip install .
     ```
 
 ### Test It Out (See If It Actually Works)
@@ -50,7 +57,7 @@ Alright folks, if you wanna get this hot mess of a tool onto your computer, pay 
 Now for the moment of truth. Type the following into your terminal:
 
 ```bash
-peter --help
+ $ peter --help
 ```
 
 If you see a bunch of help text (and likely some insults from me), then congrats, you've installed it! If you get errors, well... maybe this thing ain't for you after all.

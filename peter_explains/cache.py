@@ -3,6 +3,7 @@ import sys
 from diskcache import Cache
 
 from peter_explains._name import __app_name__
+from peter_explains.schema import CommandExplanation, CommandExplanationWithArguments
 
 
 class PeterCache:
@@ -22,10 +23,10 @@ class PeterCache:
         This function gets the cache directory for the Peter Explains CLI based on the operating system.
 
         Args:
-        - cache_dir_name (str): The name of the Peter Explains CLI cache directory.
+            cache_dir_name (str): The name of the Peter Explains CLI cache directory.
 
         Returns:
-        - cache_dir (str): The cache directory for the Peter Explains CLI.
+            cache_dir (str): The cache directory for the Peter Explains CLI.
         """
         if os.name == "nt":
             cache_dir = os.path.join(os.getenv("LOCALAPPDATA"), cache_dir_name, "cache")
@@ -52,28 +53,28 @@ class PeterCache:
         """
         return key in self.cache
 
-    def save(self, key, value):
+    def save(self, key: str, value: CommandExplanation | CommandExplanationWithArguments):
         """
         Saves the given value in the cache with the specified key.
 
-        Parameters:
-        - key: The key to associate with the value in the cache.
-        - value: The value to be saved in the cache.
+        Args:
+            key (str): The key to associate with the value in the cache.
+            value (CommandExplanation | CommandExplanationWithArguments): The value to be saved in the cache.
 
         Returns:
-        None
+            None
         """
         self.cache[key] = value
 
-    def get(self, key):
+    def get(self, key) -> CommandExplanation | CommandExplanationWithArguments | None:
         """
         Retrieve the value associated with the given key from the cache.
 
         Parameters:
-        - key (any): The key to retrieve the value for.
+            key (any): The key to retrieve the value for.
 
         Returns:
-        - any: The value associated with the given key, or None if the key is not found in the cache.
+            The value associated with the key, or None if the key is not found.
         """
         return self.cache.get(key)
 
