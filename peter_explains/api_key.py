@@ -7,7 +7,7 @@ from peter_explains.utils import (
     show_crappy_api_key_error,
     show_api_key_success_message,
 )
-from peter_explains._name import app_name
+from peter_explains._name import __app_name__
 
 
 class GoogleApiKey:
@@ -22,7 +22,7 @@ class GoogleApiKey:
     def get_api_ley_file_path() -> str:
         if os.name == "nt":
             api_file_path = os.path.join(
-                os.getenv("LOCALAPPDATA"), app_name, f"{app_name}_api.json"
+                os.getenv("LOCALAPPDATA"), __app_name__, f"{__app_name__}_api.json"
             )
         elif os.name == "posix":
             home = os.path.expanduser("~")
@@ -31,12 +31,12 @@ class GoogleApiKey:
                     home,
                     "Library",
                     "Application Support",
-                    app_name,
-                    f"{app_name}_api.json",
+                    __app_name__,
+                    f"{__app_name__}_api.json",
                 )
             else:
                 api_file_path = os.path.join(
-                    home, ".config", app_name, f"{app_name}_api.json"
+                    home, ".config", __app_name__, f"{__app_name__}_api.json"
                 )
 
         return api_file_path
