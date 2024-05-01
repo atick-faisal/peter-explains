@@ -17,6 +17,11 @@ jobs:
               with:
                   fetch-depth: 0
 
+            - name: Format README.md
+              run: |
+                chmod +x format_readme.sh
+                ./format_readme.sh
+
             - name: Generate Docs
               run: |
                   pip install mkdocs mkdocs-material mkdocstrings-python

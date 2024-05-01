@@ -5,8 +5,8 @@ class PromptType(Enum):
     Enum class representing different types of prompts for explaining Linux commands.
 
     Attributes:
-    - WITHOUT_ARGUMENTS: Prompt type for explaining a Linux command without arguments.
-    - WITH_ARGUMENTS: Prompt type for explaining a Linux command with arguments.
+        WITHOUT_ARGUMENTS: Prompt type for explaining a Linux command without arguments.
+        WITH_ARGUMENTS: Prompt type for explaining a Linux command with arguments.
     """
 
     WITHOUT_ARGUMENTS = """
@@ -87,9 +87,9 @@ class PromptType(Enum):
         Get the prompt template with the command inserted.
 
         Args:
-        - command (str): The Linux command to explain.
+            command (str): The Linux command to explain.
 
         Returns:
-        - str: The prompt template with the command inserted.
+            str: The prompt template with the command inserted.
         """
         return self.value.format(command=command)

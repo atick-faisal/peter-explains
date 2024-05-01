@@ -76,4 +76,31 @@ plugins:
     - tags
     - mkdocstrings
 
+nav:
+  - Home: 
+    - Introduction: index.md
+  - Reference:
+    - API Key: reference/api_key.md
+    - Args: reference/args.md
+    - Cache: reference/cache.md
+    - Format: reference/format.md
+    - Main: reference/main.md
+    - Messages: reference/messages.md
+    - Peter AI: reference/peter_ai.md
+    - Prompts: reference/prompts.md
+    - Schema: reference/schema.md
+    - Utils: reference/utils.md
+  - Usage: usage.md
+  - Installation: installation.md
+  - Contributing: contributing.md
+  # - Tutorials:
+  #   - Getting Started: tutorials/getting_started.md
+  #   - Installation: tutorials/installation.md
+  #   - Quick Start: tutorials/quick_start.md
+  #   - Usage: tutorials/usage.md
+  # - Examples:
+  #   - Basic: examples/basic.md
+  #   - Intermediate: examples/intermediate.md
+  #   - Advanced: examples/advanced.md
+
 copyright: Copyright &copy; 2023 Atick Faisal
