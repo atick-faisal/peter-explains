@@ -1,8 +1,9 @@
-import sys
 import asyncio
+import sys
+
 from colorama import Fore, Style
 
-from peter_explains.messages import ErrorMessage, LoadingMessage
+from .messages import ErrorMessage, LoadingMessage
 
 
 def show_no_api_key_error():
@@ -89,7 +90,9 @@ def show_peter_help():
         + "* --api [API_KEY]: Gotta do it before doin anythihg stupid."
         + Style.RESET_ALL
     )
-    print("* --delete-api: Screwd up API key? Go remove it it with this. You're welcome.")
+    print(
+        "* --delete-api: Screwd up API key? Go remove it it with this. You're welcome."
+    )
     print("* --delete-cache: Wanna start fresh? Try this one.")
     print("* --help: Yeah, yeah, that's what you're lookin' at right now, genius.")
     print(

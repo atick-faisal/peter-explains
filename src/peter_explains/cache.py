@@ -1,9 +1,10 @@
 import os
 import sys
+
 from diskcache import Cache
 
-from peter_explains._name import __app_name__
-from peter_explains.schema import CommandExplanation, CommandExplanationWithArguments
+from . import __app_name__
+from .schema import CommandExplanation, CommandExplanationWithArguments
 
 
 class PeterCache:
@@ -29,17 +30,17 @@ class PeterCache:
             cache_dir (str): The cache directory for the Peter Explains CLI.
         """
         if os.name == "nt":
-            cache_dir = os.path.join(os.getenv("LOCALAPPDATA"), cache_dir_name, "cache")
+            return os.path.join(os.getenv("LOCALAPPDATA"), cache_dir_name, "cache")
         elif os.name == "posix":
             home = os.path.expanduser("~")
             if sys.platform == "darwin":
-                cache_dir = os.path.join(
+                return os.path.join(
                     home, "Library", "Application Support", cache_dir_name, "cache"
                 )
             else:
-                cache_dir = os.path.join(home, ".config", cache_dir_name, "cache")
-
-        return cache_dir
+                return os.path.join(home, ".config", cache_dir_name, "cache")
+        else:
+            raise ValueError("Unsupported OS")
 
     def __contains__(self, key):
         """
@@ -53,7 +54,9 @@ class PeterCache:
         """
         return key in self.cache
 
-    def save(self, key: str, value: CommandExplanation | CommandExplanationWithArguments):
+    def save(
+        self, key: str, value: CommandExplanation | CommandExplanationWithArguments
+    ):
         """
         Saves the given value in the cache with the specified key.
 

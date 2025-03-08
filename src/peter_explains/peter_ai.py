@@ -1,8 +1,10 @@
-import google.generativeai as genai
+from google import genai
+from google.genai import types
 
-from peter_explains.api_key import GoogleApiKey
-from peter_explains.prompts import PromptType
-from peter_explains.schema import CommandExplanationWithArguments, CommandExplanation
+from . import __model__
+from .api_key import GoogleApiKey
+from .prompts import PromptType
+from .schema import CommandExplanationWithArguments, CommandExplanation
 
 
 class PeterAi:
@@ -10,12 +12,9 @@ class PeterAi:
     This class provides methods to explain Linux commands using the Google Generative AI model.
     """
 
-    def __init__(self, model_name: str = "gemini-pro"):
+    def __init__(self):
         """
         Initialize the PeterAi class with the specified model.
-
-        Args:
-        - model_name (str): The name of the model to use for explaining Linux commands.
 
         Returns:
         - None
@@ -64,9 +63,34 @@ class PeterAi:
             #     "threshold": "BLOCK_NONE",
             # },
         ]
-        genai.configure(transport="grpc_asyncio", api_key=api_key)
-        self.model = genai.GenerativeModel(
-            model_name, safety_settings=self.safety_settings
+        self.client = genai.Client(api_key=api_key)
+        self.config = types.GenerateContentConfig(
+            safety_settings=[
+                types.SafetySetting(
+                    category=types.HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT,
+                    threshold=types.HarmBlockThreshold.BLOCK_NONE,
+                ),
+                types.SafetySetting(
+                    category=types.HarmCategory.HARM_CATEGORY_HATE_SPEECH,
+                    threshold=types.HarmBlockThreshold.BLOCK_NONE,
+                ),
+                types.SafetySetting(
+                    category=types.HarmCategory.HARM_CATEGORY_HARASSMENT,
+                    threshold=types.HarmBlockThreshold.BLOCK_NONE,
+                ),
+                types.SafetySetting(
+                    category=types.HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT,
+                    threshold=types.HarmBlockThreshold.BLOCK_NONE,
+                ),
+                types.SafetySetting(
+                    category=types.HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT,
+                    threshold=types.HarmBlockThreshold.BLOCK_NONE,
+                ),
+                types.SafetySetting(
+                    category=types.HarmCategory.HARM_CATEGORY_CIVIC_INTEGRITY,
+                    threshold=types.HarmBlockThreshold.BLOCK_NONE,
+                ),
+            ]
         )
 
     async def explain_command(
@@ -89,17 +113,20 @@ class PeterAi:
             CommandExplanation | CommandExplanationWithArguments: The explanation of the Linux command.
         """
 
-        result = None
         if " " in command:  # Check if command includes arguments
             prompt = PromptType.WITH_ARGUMENTS.format(command=command)
-            response = await self.model.generate_content_async(
-                prompt, safety_settings=self.safety_settings
+            response = await self.client.aio.models.generate_content(
+                model=__model__,
+                contents=prompt,
+                config=self.config,
             )
             result = CommandExplanationWithArguments.from_response(response.text)
         else:
             prompt = PromptType.WITHOUT_ARGUMENTS.format(command=command)
-            response = await self.model.generate_content_async(
-                prompt, safety_settings=self.safety_settings
+            response = await self.client.aio.models.generate_content(
+                model=__model__,
+                contents=prompt,
+                config=self.config,
             )
             result = CommandExplanation.from_response(response.text)
         return result
