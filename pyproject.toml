@@ -24,15 +24,17 @@ classifiers = [
     "Programming Language :: Python :: 3.13",
 ]
 dependencies = [
+    "click>=8.1.8",
     "colorama>=0.4.6",
     "diskcache>=5.6.3",
-    "google-generativeai>=0.8.4",
+    "google-genai>=1.5.0",
     "json-repair>=0.39.1",
     "keyring>=25.6.0",
+    "ruff>=0.9.10",
 ]
 
 [project.scripts]
-peter = "peter-explains.main:peter"
+peter = "peter_explains.main:peter"
 
 [project.urls]
 Homepage = "https://atick.dev/peter-explains/"
@@ -46,7 +48,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/hello"]
+packages = ["src/peter_explains"]
 
 [tool.hatch.envs.test]
 dependencies = [
@@ -59,5 +61,6 @@ python = ["3.12", "3.11", "3.10"]
 
 [dependency-groups]
 dev = [
+    "pytest>=8.3.5",
     "ruff>=0.9.10",
 ]

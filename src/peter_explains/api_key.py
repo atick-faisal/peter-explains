@@ -1,13 +1,14 @@
+import json
 import os
 import sys
-import json
+from typing import TYPE_CHECKING
 
-from peter_explains.utils import (
+from . import __app_name__
+from .utils import (
     show_no_api_key_error,
     show_crappy_api_key_error,
     show_api_key_success_message,
 )
-from peter_explains._name import __app_name__
 
 
 class GoogleApiKey:
@@ -21,13 +22,13 @@ class GoogleApiKey:
     @staticmethod
     def get_api_ley_file_path() -> str:
         if os.name == "nt":
-            api_file_path = os.path.join(
+            return os.path.join(
                 os.getenv("LOCALAPPDATA"), __app_name__, f"{__app_name__}_api.json"
             )
         elif os.name == "posix":
             home = os.path.expanduser("~")
             if sys.platform == "darwin":
-                api_file_path = os.path.join(
+                return os.path.join(
                     home,
                     "Library",
                     "Application Support",
@@ -35,11 +36,12 @@ class GoogleApiKey:
                     f"{__app_name__}_api.json",
                 )
             else:
-                api_file_path = os.path.join(
+                return os.path.join(
                     home, ".config", __app_name__, f"{__app_name__}_api.json"
                 )
 
-        return api_file_path
+        else:
+            raise ValueError("Unsupported OS")
 
     def get(self) -> str:
         """
@@ -76,6 +78,11 @@ class GoogleApiKey:
             show_crappy_api_key_error()
             sys.exit(1)
 
+        if TYPE_CHECKING:
+            from _typeshed import SupportsWrite
+
+            file: SupportsWrite[str]
+
         with open(self.api_key_path, "w", encoding="utf-8") as file:
             json.dump({"api_key": api_key}, file)
         show_api_key_success_message()
@@ -84,9 +91,6 @@ class GoogleApiKey:
     def clear(self):
         """
         This function clears the API key from the keyring.
-
-        Args:
-            None
 
         Returns:
             None

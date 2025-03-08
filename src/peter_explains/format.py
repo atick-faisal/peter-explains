@@ -1,5 +1,5 @@
 from colorama import Fore, Style
-from peter_explains.schema import CommandExplanation, CommandExplanationWithArguments
+from .schema import CommandExplanation, CommandExplanationWithArguments
 
 
 def pretty_print_result(result: CommandExplanation | CommandExplanationWithArguments):
