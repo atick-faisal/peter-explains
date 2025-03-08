@@ -1,0 +1,29 @@
+name: Test
+
+on:
+    push:
+        branches:
+            - main
+    pull_request:
+        branches:
+            - main
+    schedule:
+        - cron: "0 0 * * 0"
+
+jobs:
+    build:
+        runs-on: ${{ matrix.os }}
+        strategy:
+            matrix:
+                os: ["ubuntu-latest"]
+        steps:
+            - uses: actions/checkout@v4
+            - name: Install uv
+              uses: astral-sh/setup-uv@v5
+            - name: Install dependencies
+              run: uv sync --all-extras --dev
+            - name: Run tests
+              run: uv tool run hatch test --parallel --all
+
+env:
+    GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
