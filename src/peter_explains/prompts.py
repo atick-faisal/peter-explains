@@ -1,5 +1,6 @@
 from enum import Enum
 
+
 class PromptType(Enum):
     """
     Enum class representing different types of prompts for explaining Linux commands.

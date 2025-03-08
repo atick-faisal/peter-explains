@@ -1,10 +1,10 @@
-import sys
 import argparse
+import sys
 
-from peter_explains.api_key import GoogleApiKey
-from peter_explains.cache import PeterCache
-from peter_explains.utils import show_peter_help
-from peter_explains._version import __version__
+from . import __version__
+from .api_key import GoogleApiKey
+from .cache import PeterCache
+from .utils import show_peter_help
 
 
 def parse_arguments():
