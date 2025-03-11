@@ -60,9 +60,6 @@ jobs:
       - name: 📥 Install Dependencies
         run: uv sync --all-extras --dev
 
-      - name: 🔖 Version Package
-        run: uv tool run hatch version rc
-
       - name: 📦 Build Package
         run: uv tool run hatch build
 
