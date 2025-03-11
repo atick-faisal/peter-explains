@@ -16,7 +16,7 @@ jobs:
       - name: 📦 Install uv
         uses: astral-sh/setup-uv@v5
         with:
-          python-version: "3.12"  # Running linting only on Python 3.12
+          python-version: "3.12"
 
       - name: 📥 Install Dependencies
         run: uv sync --all-extras --dev
@@ -25,3 +25,7 @@ jobs:
         run: |
           uv run mkdocs build
           uv run mkdocs gh-deploy
+
+# https://github.com/softprops/action-gh-release/issues/236
+permissions:
+  contents: write
