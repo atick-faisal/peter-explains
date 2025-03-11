@@ -21,4 +21,7 @@ jobs:
             -   name: Build package
                 run: uv tool run hatch build
             -   name: Publish package
-                run: uv tool run hatch publish --repo test --no-prompt
+                uses: pypa/gh-action-pypi-publish@release/v1
+                with:
+                    repository-url: https://test.pypi.org/legacy/
+                    packages-dir: dist/
