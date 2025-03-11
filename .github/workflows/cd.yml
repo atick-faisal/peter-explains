@@ -78,7 +78,7 @@ jobs:
           body_path: CHANGELOG.md
           files: dist/*
 
-      - name: 🚀 Publish to TestPyPi
+      - name: 🚀 Publish to PyPi
         uses: pypa/gh-action-pypi-publish@release/v1
         with:
           packages-dir: dist/
