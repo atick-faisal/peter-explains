@@ -1,6 +1,6 @@
 [project]
 name = "peter-explains"
-version = "0.1.0"
+dynamic = ["version"]
 description = "Linux command explanations from Peter Griffin"
 readme = "README.md"
 authors = [
@@ -55,6 +55,9 @@ dependencies = [
     "pytest",
     "pytest-cov",
 ]
+
+[tool.hatch.version]
+path = "src/peter_explains/__init__.py"
 
 [[tool.hatch.envs.hatch-test.matrix]]
 python = ["3.12", "3.11", "3.10"]

@@ -1,4 +1,4 @@
-name: Upload Python Package to TestPyPi
+name: Upload to TestPyPi
 
 on:
     push:
@@ -11,16 +11,17 @@ permissions:
 
 jobs:
     test-release:
+        needs: test  # Ensure tests pass before releasing
         runs-on: ubuntu-latest
         steps:
             -   uses: actions/checkout@v4
-            -   name: Install uv
-                uses: astral-sh/setup-uv@v5
-            -   name: Install dependencies
-                run: uv sync --all-extras --dev
-            -   name: Build package
+            -   name: Run Setup
+                uses: ./.github/workflows/setup.yaml
+            -   name: Version Package
+                run: uv tool run hatch version rc
+            -   name: Build Package
                 run: uv tool run hatch build
-            -   name: Publish package
+            -   name: Publish to TestPyPi
                 uses: pypa/gh-action-pypi-publish@release/v1
                 with:
                     repository-url: https://test.pypi.org/legacy/
