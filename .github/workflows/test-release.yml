@@ -1,9 +1,9 @@
 name: Upload to TestPyPi
 
 on:
-    push:
-#        branches:
-#            - main
+    pull_request:
+        branches:
+            - main
 
 permissions:
     contents: read
@@ -14,13 +14,15 @@ jobs:
         needs: test  # Ensure tests pass before releasing
         runs-on: ubuntu-latest
         steps:
-            -   uses: actions/checkout@v4
             -   name: Run Setup
-                uses: ./.github/workflows/setup.yaml
+                uses: ./.github/actions/setup
+
             -   name: Version Package
                 run: uv tool run hatch version rc
+
             -   name: Build Package
                 run: uv tool run hatch build
+
             -   name: Publish to TestPyPi
                 uses: pypa/gh-action-pypi-publish@release/v1
                 with:

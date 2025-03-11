@@ -16,8 +16,8 @@ jobs:
             matrix:
                 os: [ "ubuntu-latest", "macos-latest", "windows-latest" ]
         steps:
-            -   uses: actions/checkout@v4
             -   name: Run Setup
-                uses: ./.github/workflows/setup.yaml
+                uses: ./.github/actions/setup
+
             -   name: Run Tests
                 run: uv tool run hatch test --parallel --all --retries 2
