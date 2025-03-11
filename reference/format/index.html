@@ -444,8 +444,6 @@
       
         
       
-        
-      
     
     
       
@@ -493,28 +491,6 @@
   
   <span class="md-ellipsis">
     API Key
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../args/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Args
     
   </span>
   
@@ -918,6 +894,7 @@
 
 
 
+
   <div class="doc doc-children">
 
 
@@ -958,7 +935,17 @@
                 <code>result</code>
             </td>
             <td>
-                  <code><a class="autorefs autorefs-internal" title="peter_explains.schema.CommandExplanation" href="../schema/#peter_explains.schema.CommandExplanation">CommandExplanation</a> | <a class="autorefs autorefs-internal" title="peter_explains.schema.CommandExplanationWithArguments" href="../schema/#peter_explains.schema.CommandExplanationWithArguments">CommandExplanationWithArguments</a></code>
+                  <code><a class="autorefs autorefs-internal" title="CommandExplanation
+
+
+  
+      dataclass
+   (peter_explains.schema.CommandExplanation)" href="../schema/#peter_explains.schema.CommandExplanation">CommandExplanation</a> | <a class="autorefs autorefs-internal" title="CommandExplanationWithArguments
+
+
+  
+      dataclass
+   (peter_explains.schema.CommandExplanationWithArguments)" href="../schema/#peter_explains.schema.CommandExplanationWithArguments">CommandExplanationWithArguments</a></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -994,8 +981,9 @@
       </tbody>
     </table>
 
+
             <details class="quote">
-              <summary>Source code in <code>peter_explains/format.py</code></summary>
+              <summary>Source code in <code>src/peter_explains/format.py</code></summary>
               <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
 <span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
 <span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
@@ -1031,7 +1019,7 @@
 <span class="normal"><a href="#__codelineno-0-37">37</a></span>
 <span class="normal"><a href="#__codelineno-0-38">38</a></span>
 <span class="normal"><a href="#__codelineno-0-39">39</a></span>
-<span class="normal"><a href="#__codelineno-0-40">40</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="k">def</span> <span class="nf">pretty_print_result</span><span class="p">(</span><span class="n">result</span><span class="p">:</span> <span class="n">CommandExplanation</span> <span class="o">|</span> <span class="n">CommandExplanationWithArguments</span><span class="p">):</span>
+<span class="normal"><a href="#__codelineno-0-40">40</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="k">def</span><span class="w"> </span><span class="nf">pretty_print_result</span><span class="p">(</span><span class="n">result</span><span class="p">:</span> <span class="n">CommandExplanation</span> <span class="o">|</span> <span class="n">CommandExplanationWithArguments</span><span class="p">):</span>
 </span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 </span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="sd">    Prints the command explanation or command explanation with arguments in a formatted manner.</span>
 </span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8"></a>
