@@ -21,4 +21,4 @@ jobs:
             -   name: Build package
                 run: uv tool run hatch build
             -   name: Publish package
-                run: uv tool run hatch publish --repo test --no-interactive
+                run: uv tool run hatch publish --repo test --no-prompt
