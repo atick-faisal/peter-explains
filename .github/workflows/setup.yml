@@ -1,5 +1,4 @@
-name: Setup Environment
-
+name: Setup
 on:
     workflow_call:
         inputs:
@@ -10,7 +9,7 @@ on:
 
 jobs:
     setup:
-        runs-on: ubuntu-latest
+        runs-on: ${{ inputs.os || 'ubuntu-latest' }}
         steps:
             -   uses: actions/checkout@v4
             -   name: Install uv
