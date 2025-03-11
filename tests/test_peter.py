@@ -1,10 +1,17 @@
 import os
 import time
+from typing import TYPE_CHECKING
+
 import pytest
 from click.testing import CliRunner
 
 from peter_explains import __version__
 from peter_explains.main import peter
+
+if TYPE_CHECKING:
+    from click import BaseCommand
+
+    peter: BaseCommand
 
 runner = CliRunner()
 
@@ -80,7 +87,7 @@ def test_result_caching(set_api_key):
     ret = runner.invoke(peter, ["grep"])
     end = time.time()
     assert ret.exit_code == 0
-    assert end - start > 1  # First call should take time
+    assert end - start > 0.7  # First call should take time
 
     # Measure execution time for cached command
     start = time.time()

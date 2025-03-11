@@ -75,6 +75,7 @@ plugins:
     - search
     - tags
     - mkdocstrings
+    - gh-admonitions
 
 nav:
   - Home: 
