@@ -1,4 +1,4 @@
-__version__ = "0.0.11"
+__version__ = "0.0.12"
 __app_name__ = "peter-explains"
 __model__ = "gemini-2.0-flash"
 
