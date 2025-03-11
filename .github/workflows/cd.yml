@@ -43,12 +43,12 @@ jobs:
       - name: 🚀 Run Tests
         run: uv tool run hatch test --parallel --all --retries 2
 
-  test-release:
+  release:
     name: 📦 Build & Publish Package
     needs: test  # Runs only if tests pass ✅
     runs-on: ubuntu-latest
     permissions:
-      contents: read
+      contents: write
       id-token: write
     steps:
       - name: ⬇️ Checkout Repository
