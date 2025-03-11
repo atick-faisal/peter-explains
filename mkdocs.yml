@@ -82,7 +82,6 @@ nav:
     - Introduction: index.md
   - Reference:
     - API Key: reference/api_key.md
-    - Args: reference/args.md
     - Cache: reference/cache.md
     - Format: reference/format.md
     - Main: reference/main.md
