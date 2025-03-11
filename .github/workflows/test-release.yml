@@ -1,29 +1,31 @@
-name: Upload to TestPyPi
-
+# .github/workflows/test-release.yml
+name: Upload Python Package to TestPyPi
 on:
-    pull_request:
+    push:
         branches:
-            - main
+            - notnow
 
 permissions:
     contents: read
     id-token: write
 
 jobs:
-    test-release:
-        needs: test  # Ensure tests pass before releasing
+    setup:
+        uses: ./.github/workflows/setup.yml
+
+    test:
+        needs: setup
+        uses: ./.github/workflows/test.yml
+
+    release:
+        needs: test
         runs-on: ubuntu-latest
         steps:
-            -   name: Run Setup
-                uses: ./.github/actions/setup
-
             -   name: Version Package
                 run: uv tool run hatch version rc
-
-            -   name: Build Package
+            -   name: Build package
                 run: uv tool run hatch build
-
-            -   name: Publish to TestPyPi
+            -   name: Publish package
                 uses: pypa/gh-action-pypi-publish@release/v1
                 with:
                     repository-url: https://test.pypi.org/legacy/
