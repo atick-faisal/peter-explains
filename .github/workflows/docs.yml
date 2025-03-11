@@ -23,5 +23,5 @@ jobs:
 
       - name: 📝 Run MKDocs
         run: |
-          uv tool run mkdocs build
-          uv tool run mkdocs gh-deploy
+          uv run mkdocs build
+          uv run mkdocs gh-deploy
