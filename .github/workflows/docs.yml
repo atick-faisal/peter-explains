@@ -1,0 +1,27 @@
+name: 📑 Docs Workflow
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  docs:
+    name: 🗐 Document Code
+    runs-on: ubuntu-latest
+    steps:
+      - name: ⬇️ Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: 📦 Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          python-version: "3.12"  # Running linting only on Python 3.12
+
+      - name: 📥 Install Dependencies
+        run: uv sync --all-extras --dev
+
+      - name: 📝 Run MKDocs
+        run: |
+          uv tool run mkdocs build
+          uv tool run mkdocs gh-deploy

@@ -1,10 +1,9 @@
-name: 🚀 CI Pipeline
+name: 🚀 CD Pipeline
 
 on:
   push:
-  pull_request:
-    branches:
-      - main
+    tags:
+      - "v.*.*"
 
 jobs:
   lint:
