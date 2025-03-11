@@ -1,10 +1,10 @@
 ## **`peter`: Your Linux Command Translator (Peter Griffin Edition)**
 
-![Banner](docs/assets/banner.png)
+![Banner](https://raw.githubusercontent.com/atick-faisal/peter-explains/main/docs/assets/banner.png)
 
 Hey Lois, ever wanted to understand those geeky Linux commands but were afraid you'd end up more confused than a monkey trying to do its taxes? Well, fear no more! `peter` is here to break down those brainy terminal things in a way even I can understand (well, mostly).
 
-![Demo](docs/assets/demo.gif)
+![Demo](https://raw.githubusercontent.com/atick-faisal/peter-explains/main/docs/assets/demo.gif)
 
 ### **How the Heck Does This Work?**
 
@@ -12,7 +12,7 @@ Hey Lois, ever wanted to understand those geeky Linux commands but were afraid y
 2. **I whip out my trusty Gemini AI translator:** This thing's smarter than Stewie after a bowl of spinach, and it'll turn that boring command into a hilarious hot mess of an explanation.
 3. **You laugh (or groan), but hey, at least you learn somethin':** Maybe you'll actually remember what those commands do instead of just blindly copying stuff from the internet like a parrot.
 
-### **Gettin' Started (For Dummies Like Me)** <img src="docs/assets/apikey.png" alt="Whatever" width="250" align="right">
+### **Gettin' Started (For Dummies Like Me)** <img src="https://raw.githubusercontent.com/atick-faisal/peter-explains/main/docs/assets/apikey.png" alt="Whatever" width="250" align="right" role="img">
 
 1. **Make sure you got that pip thing installed:** You know, for downloading packages and stuff.
 2. **Use pip to install this amazingness:** 
@@ -59,7 +59,7 @@ Need more?
 
 <p align="center">
     <a href="http://atick.dev/peter-explains/">
-    <img src="docs/assets/docs.png" alt="Button description" width="400">
+    <img src="https://raw.githubusercontent.com/atick-faisal/peter-explains/main/docs/assets/docs.png" alt="Button description" width="400" role="img">
     </a>
 </p>
 
@@ -92,7 +92,7 @@ $ pip install -e .
 
 
 
-### **Disclaimer** <img src="docs/assets/meg.png" alt="Whatever" width="150" height="150" align="left">
+### **Disclaimer** <img src="https://raw.githubusercontent.com/atick-faisal/peter-explains/main/docs/assets/meg.png" alt="Whatever" width="150" height="150" align="left" role="img">
 
 I ain't responsible if this tool makes you dumber, offends your delicate sensibilities, or causes your computer to explode. Use at your own risk, and remember: laughter is the best medicine... unless you're choking on a hot dog. Then you probably need a doctor.
 

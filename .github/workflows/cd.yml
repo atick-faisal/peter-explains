@@ -66,8 +66,20 @@ jobs:
       - name: 📦 Build Package
         run: uv tool run hatch build
 
+      - name: 📤 Upload Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          path: ${{ github.workspace }}/dist/*
+
+      - name: 📦 Create Release
+        uses: softprops/action-gh-release@v2
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          body_path: CHANGELOG.md
+          files: dist/*
+
       - name: 🚀 Publish to TestPyPi
         uses: pypa/gh-action-pypi-publish@release/v1
         with:
-          repository-url: https://test.pypi.org/legacy/
           packages-dir: dist/
+          skip-existing: true
