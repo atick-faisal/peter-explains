@@ -1,28 +1,7 @@
 {
   "extends": ["config:base"],
-  "packageRules": [
-    {
-      "matchManagers": ["pip"],
-      "enabled": false
-    },
-    {
-      "matchManagers": ["poetry"],
-      "enabled": false
-    },
-    {
-      "matchManagers": ["uv"],
-      "enabled": true,
-      "matchPackagePatterns": ["*"],
-      "groupName": "Python dependencies (uv)"
-    }
-  ],
-  "uv": {
-    "fileMatch": ["(^|/)uv\\.lock$"]
-  },
-  "regexManagers": [],
   "lockFileMaintenance": {
     "enabled": true,
-    "schedule": ["weekly"]
   },
   "dependencyDashboard": true
 }
