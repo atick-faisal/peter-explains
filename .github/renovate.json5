@@ -1,7 +1,9 @@
 {
-  "extends": ["config:base"],
-  "lockFileMaintenance": {
-    "enabled": true,
+  extends: [
+    'config:recommended',
+  ],
+  lockFileMaintenance: {
+    enabled: true,
   },
-  "dependencyDashboard": true
+  dependencyDashboard: true,
 }
