@@ -15,10 +15,12 @@ jobs:
     steps:
       - name: ⬇️ Checkout Repository
         uses: actions/checkout@v4
+        
       - name: 🚀 Test README with LLM
         uses: atick-faisal/llm-readme-tester@v1
         with:
           google_api_key: ${{ secrets.GOOGLE_API_KEY }}
+          checks: "description,install,usage,demo"
 
       - name: 📦 Install uv
         uses: astral-sh/setup-uv@v5
