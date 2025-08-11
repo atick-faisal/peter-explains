@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: ⬇️ Checkout Repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         
       - name: 🚀 Test README with LLM
         uses: atick-faisal/llm-readme-tester@v1
@@ -41,7 +41,7 @@ jobs:
       GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
     steps:
       - name: ⬇️ Checkout Repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: 📦 Install uv
         uses: astral-sh/setup-uv@v6
@@ -61,7 +61,7 @@ jobs:
       id-token: write
     steps:
       - name: ⬇️ Checkout Repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: 📦 Install uv
         uses: astral-sh/setup-uv@v6
