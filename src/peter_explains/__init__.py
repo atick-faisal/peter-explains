@@ -1,6 +1,6 @@
 __version__ = "0.0.12"
 __app_name__ = "peter-explains"
-__model__ = "gemini-2.0-flash"
+__model__ = "gemini-2.5-flash"
 
 
 def hello() -> str:
