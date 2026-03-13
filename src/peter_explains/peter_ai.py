@@ -113,20 +113,24 @@ class PeterAi:
             CommandExplanation | CommandExplanationWithArguments: The explanation of the Linux command.
         """
 
-        if " " in command:  # Check if command includes arguments
-            prompt = PromptType.WITH_ARGUMENTS.format(command=command)
-            response = await self.client.aio.models.generate_content(
-                model=__model__,
-                contents=prompt,
-                config=self.config,
-            )
-            result = CommandExplanationWithArguments.from_response(response.text)
-        else:
-            prompt = PromptType.WITHOUT_ARGUMENTS.format(command=command)
-            response = await self.client.aio.models.generate_content(
-                model=__model__,
-                contents=prompt,
-                config=self.config,
-            )
-            result = CommandExplanation.from_response(response.text)
-        return result
+        try:
+            if " " in command:  # Check if command includes arguments
+                prompt = PromptType.WITH_ARGUMENTS.format(command=command)
+                response = await self.client.aio.models.generate_content(
+                    model=__model__,
+                    contents=prompt,
+                    config=self.config,
+                )
+                result = CommandExplanationWithArguments.from_response(response.text)
+            else:
+                prompt = PromptType.WITHOUT_ARGUMENTS.format(command=command)
+                response = await self.client.aio.models.generate_content(
+                    model=__model__,
+                    contents=prompt,
+                    config=self.config,
+                )
+                result = CommandExplanation.from_response(response.text)
+            return result
+        finally:
+            # Properly close the client to prevent event loop errors on Python 3.10
+            await self.client.aio.aclose()
