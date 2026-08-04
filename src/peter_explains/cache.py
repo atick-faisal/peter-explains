@@ -1,10 +1,10 @@
 import os
-import sys
 
 from diskcache import Cache
 
 from . import __app_name__
 from .schema import CommandExplanation, CommandExplanationWithArguments
+from .utils import get_app_data_dir
 
 
 class PeterCache:
@@ -29,18 +29,11 @@ class PeterCache:
         Returns:
             cache_dir (str): The cache directory for the Peter Explains CLI.
         """
-        if os.name == "nt":
-            return os.path.join(os.getenv("LOCALAPPDATA"), cache_dir_name, "cache")
-        elif os.name == "posix":
-            home = os.path.expanduser("~")
-            if sys.platform == "darwin":
-                return os.path.join(
-                    home, "Library", "Application Support", cache_dir_name, "cache"
-                )
-            else:
-                return os.path.join(home, ".config", cache_dir_name, "cache")
-        else:
-            raise ValueError("Unsupported OS")
+        # diskcache pickles its values, so treat the cache dir as trusted
+        # storage and keep it owner-only like the API key file.
+        cache_dir = os.path.join(get_app_data_dir(cache_dir_name), "cache")
+        os.makedirs(cache_dir, mode=0o700, exist_ok=True)
+        return cache_dir
 
     def __contains__(self, key):
         """

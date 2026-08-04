@@ -29,8 +29,6 @@ dependencies = [
     "diskcache>=5.6.3",
     "google-genai>=1.5.0",
     "json-repair>=0.39.1",
-    "keyring>=25.6.0",
-    "ruff>=0.9.10",
 ]
 
 [project.scripts]
@@ -49,6 +47,12 @@ build-backend = "hatchling.build"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/peter_explains"]
+
+[tool.pytest.ini_options]
+markers = ["live: hits the real Gemini API; requires GOOGLE_API_KEY"]
+# Live tests consume API quota. CLI -m overrides this, so the scheduled
+# smoke workflow opts back in with `-m live`.
+addopts = "-m 'not live'"
 
 [tool.hatch.envs.test]
 dependencies = [
