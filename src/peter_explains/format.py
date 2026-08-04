@@ -1,4 +1,5 @@
 from colorama import Fore, Style
+
 from .schema import CommandExplanation, CommandExplanationWithArguments
 
 

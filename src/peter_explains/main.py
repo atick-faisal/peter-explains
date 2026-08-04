@@ -8,13 +8,13 @@ from .cache import PeterCache
 from .format import pretty_print_result
 from .peter_ai import PeterAi
 from .utils import (
-    show_loading_message,
     show_error_message,
+    show_loading_message,
     show_peter_help,
 )
 
 
-async def main(command: str = None):
+async def main(command: str):
     """
     Main function to run the Peter Explains CLI.
 
@@ -46,7 +46,7 @@ async def main(command: str = None):
 
         pretty_print_result(result)
 
-    except Exception as e:
+    except Exception as e:  # noqa: BLE001 — top-level CLI error boundary
         show_error_message(e)
 
 
@@ -98,7 +98,3 @@ def peter(command, api, delete_api, delete_cache, help):
 
     # Run the explanation function
     asyncio.run(main(command.strip().lower()))
-
-
-if __name__ == "__main__":
-    asyncio.run(main())

@@ -4,7 +4,7 @@ from google.genai import types
 from . import __model__
 from .api_key import GoogleApiKey
 from .prompts import PromptType
-from .schema import CommandExplanationWithArguments, CommandExplanation
+from .schema import CommandExplanation, CommandExplanationWithArguments
 
 
 class PeterAi:
