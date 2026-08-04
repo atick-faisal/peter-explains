@@ -1,10 +1,10 @@
 import json
 import os
 import sys
-from typing import TYPE_CHECKING
 
 from . import __app_name__
 from .utils import (
+    get_app_data_dir,
     show_api_key_success_message,
     show_crappy_api_key_error,
     show_no_api_key_error,
@@ -17,31 +17,11 @@ class GoogleApiKey:
     """
 
     def __init__(self) -> None:
-        self.api_key_path = GoogleApiKey.get_api_ley_file_path()
+        self.api_key_path = GoogleApiKey.get_api_key_file_path()
 
     @staticmethod
-    def get_api_ley_file_path() -> str:
-        if os.name == "nt":
-            return os.path.join(
-                os.getenv("LOCALAPPDATA"), __app_name__, f"{__app_name__}_api.json"
-            )
-        elif os.name == "posix":
-            home = os.path.expanduser("~")
-            if sys.platform == "darwin":
-                return os.path.join(
-                    home,
-                    "Library",
-                    "Application Support",
-                    __app_name__,
-                    f"{__app_name__}_api.json",
-                )
-            else:
-                return os.path.join(
-                    home, ".config", __app_name__, f"{__app_name__}_api.json"
-                )
-
-        else:
-            raise ValueError("Unsupported OS")
+    def get_api_key_file_path() -> str:
+        return os.path.join(get_app_data_dir(__app_name__), f"{__app_name__}_api.json")
 
     def get(self) -> str:
         """
@@ -78,22 +58,23 @@ class GoogleApiKey:
             show_crappy_api_key_error()
             sys.exit(1)
 
-        if TYPE_CHECKING:
-            from _typeshed import SupportsWrite
-
-            file: SupportsWrite[str]
-
-        with open(self.api_key_path, "w", encoding="utf-8") as file:
+        # Create with 0600 up front rather than chmod-ing after: an open() would
+        # briefly leave the key world-readable.
+        fd = os.open(self.api_key_path, os.O_WRONLY | os.O_CREAT | os.O_TRUNC, 0o600)
+        with os.fdopen(fd, "w", encoding="utf-8") as file:
             json.dump({"api_key": api_key}, file)
         show_api_key_success_message()
         sys.exit(0)
 
     def clear(self):
         """
-        This function clears the API key from the keyring.
+        This function clears the stored API key.
 
         Returns:
             None
         """
-        os.remove(self.api_key_path)
+        try:
+            os.remove(self.api_key_path)
+        except FileNotFoundError:
+            pass
         print("Retep just deleted your API key. Loser!")

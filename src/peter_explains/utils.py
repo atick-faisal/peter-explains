@@ -1,4 +1,5 @@
 import asyncio
+import os
 import re
 import sys
 
@@ -6,7 +7,43 @@ from colorama import Fore, Style
 
 from .messages import ErrorMessage, LoadingMessage
 
-_GOOGLE_API_KEY_PATTERN = re.compile(r"AIza[0-9A-Za-z_-]{35}")
+
+def get_app_data_dir(app_name: str) -> str:
+    """
+    Resolve the per-user directory holding this app's API key and cache.
+
+    The directory is created if missing, with owner-only permissions so the
+    stored API key is not world-readable. `mode` is ignored on Windows.
+    """
+    if os.name == "nt":
+        local_app_data = os.getenv("LOCALAPPDATA")
+        if not local_app_data:
+            raise RuntimeError("LOCALAPPDATA is not set; cannot locate app data")
+        app_data_dir = os.path.join(local_app_data, app_name)
+    elif os.name == "posix":
+        home = os.path.expanduser("~")
+        if sys.platform == "darwin":
+            app_data_dir = os.path.join(
+                home, "Library", "Application Support", app_name
+            )
+        else:
+            app_data_dir = os.path.join(home, ".config", app_name)
+    else:
+        raise RuntimeError(f"Unsupported OS: {os.name}")
+
+    os.makedirs(app_data_dir, mode=0o700, exist_ok=True)
+    return app_data_dir
+
+_REDACTIONS = (
+    (re.compile(r"AIza[0-9A-Za-z_-]{35}"), "<redacted>"),
+    (re.compile(r"((?:key|api_key)=)[^&\s\"']+", re.IGNORECASE), r"\1<redacted>"),
+)
+
+
+def redact_secrets(text: str) -> str:
+    for pattern, replacement in _REDACTIONS:
+        text = pattern.sub(replacement, text)
+    return text
 
 
 def show_no_api_key_error():
@@ -63,7 +100,7 @@ def show_error_message(e: Exception):
     """
     print(Fore.RED + ErrorMessage.get_random_message() + Style.RESET_ALL)
     print(Fore.CYAN + "\nFor yo nerds...\n" + "-" * 15 + Style.RESET_ALL)
-    print(_GOOGLE_API_KEY_PATTERN.sub("<redacted>", str(e)))
+    print(redact_secrets(str(e)))
 
 
 def show_peter_help():

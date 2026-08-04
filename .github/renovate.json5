@@ -1,9 +1,33 @@
 {
   extends: [
     'config:recommended',
+    // Pin actions to commit SHAs and keep the digests updated.
+    'helpers:pinGitHubActionDigests',
+  ],
+  // One batch a week instead of a PR per dependency; each PR costs two CI runs.
+  schedule: [
+    'before 6am on monday',
   ],
   lockFileMaintenance: {
     enabled: true,
+    automerge: true,
   },
   dependencyDashboard: true,
+  platformAutomerge: true,
+  packageRules: [
+    {
+      groupName: 'non-major dependencies',
+      matchUpdateTypes: [
+        'minor',
+        'patch',
+      ],
+    },
+    {
+      matchManagers: [
+        'github-actions',
+      ],
+      groupName: 'github actions',
+      automerge: true,
+    },
+  ],
 }

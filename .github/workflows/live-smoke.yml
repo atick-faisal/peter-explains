@@ -1,0 +1,42 @@
+name: 🔴 Live API Smoke Test
+
+# The only workflow that touches GOOGLE_API_KEY. Deliberately not run on
+# pull_request: Renovate opens PRs constantly, and each run would burn quota
+# and expose the secret to freshly-bumped dependency code.
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 6 * * 1"  # Mondays 06:00 UTC
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: true
+
+jobs:
+  live-smoke:
+    name: 🌐 Hit the Real Gemini API
+    runs-on: ubuntu-latest
+    steps:
+      - name: ⬇️ Checkout Repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+
+      - name: 📦 Install uv
+        uses: astral-sh/setup-uv@c771a70e6277c0a99b617c7a806ffedaca235ff9 # v9.0.0
+        with:
+          python-version: "3.12"
+
+      # Deliberately runs before the secret is in scope: uv sync executes
+      # build backends from the dependency tree.
+      - name: 📥 Install Dependencies
+        run: uv sync --all-extras --dev
+
+      - name: 🚀 Run Live Tests
+        # Secret is scoped to this step only, not the whole job.
+        env:
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+        run: uv run pytest -m live -v
