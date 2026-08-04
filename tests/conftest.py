@@ -1,4 +1,5 @@
 import json
+from typing import ClassVar
 
 import pytest
 
@@ -31,9 +32,6 @@ class FakeResponse:
 
 
 class FakeModels:
-    def __init__(self, recorder: "FakeGenaiClient"):
-        self._recorder = recorder
-
     async def generate_content(self, *, model, contents, config):
         FakeGenaiClient.calls.append({"model": model, "contents": contents})
         # "breakdown" appears only in the WITH_ARGUMENTS template, so the
@@ -44,9 +42,8 @@ class FakeModels:
 
 
 class FakeAio:
-    def __init__(self, recorder: "FakeGenaiClient"):
-        self.models = FakeModels(recorder)
-        self._recorder = recorder
+    def __init__(self):
+        self.models = FakeModels()
 
     async def aclose(self):
         FakeGenaiClient.closed += 1
@@ -55,12 +52,14 @@ class FakeAio:
 class FakeGenaiClient:
     """Stand-in for genai.Client that records calls instead of hitting the network."""
 
-    calls: list[dict] = []
-    closed = 0
+    # Class-level so assertions can read them without threading the instance
+    # out of the code under test.
+    calls: ClassVar[list[dict]] = []
+    closed: ClassVar[int] = 0
 
     def __init__(self, *, api_key: str):
         self.api_key = api_key
-        self.aio = FakeAio(self)
+        self.aio = FakeAio()
 
     @classmethod
     def reset(cls):
