@@ -5,9 +5,9 @@ from typing import TYPE_CHECKING
 
 from . import __app_name__
 from .utils import (
-    show_no_api_key_error,
-    show_crappy_api_key_error,
     show_api_key_success_message,
+    show_crappy_api_key_error,
+    show_no_api_key_error,
 )
 
 

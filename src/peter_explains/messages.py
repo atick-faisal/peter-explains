@@ -1,4 +1,5 @@
 import random
+from typing import ClassVar
 
 
 class LoadingMessage:
@@ -6,7 +7,7 @@ class LoadingMessage:
     Class to store loading messages for the Peter Explains CLI.
     """
 
-    MESSAGES = [
+    MESSAGES: ClassVar[list[str]] = [
         "Hang on, Lois, I'm tryin' to think here. This is harder than figuring out what's goin' on in Stewie's head.",
         "Jeez, this computer's slower than Quagmire after a night at The Clam.",
         "Ugh, I swear this thing gets dumber every day. It's like talkin' to Brian...",
@@ -34,7 +35,7 @@ class ErrorMessage:
     Class to store error messages for the Peter Explains CLI.
     """
 
-    MESSAGES = [
+    MESSAGES: ClassVar[list[str]] = [
         "Aw crap, somethin' broke. Typical. Maybe Meg stepped on the keyboard again.",
         "Hey, if this thing gives ya the wrong answer, don't blame me. I'm just the idiot typin' stuff in.",
         "Alright, this might take longer than I thought. You got any beer in the fridge?",

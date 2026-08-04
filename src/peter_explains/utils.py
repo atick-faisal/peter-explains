@@ -1,9 +1,12 @@
 import asyncio
+import re
 import sys
 
 from colorama import Fore, Style
 
 from .messages import ErrorMessage, LoadingMessage
+
+_GOOGLE_API_KEY_PATTERN = re.compile(r"AIza[0-9A-Za-z_-]{35}")
 
 
 def show_no_api_key_error():
@@ -60,7 +63,7 @@ def show_error_message(e: Exception):
     """
     print(Fore.RED + ErrorMessage.get_random_message() + Style.RESET_ALL)
     print(Fore.CYAN + "\nFor yo nerds...\n" + "-" * 15 + Style.RESET_ALL)
-    print(e)
+    print(_GOOGLE_API_KEY_PATTERN.sub("<redacted>", str(e)))
 
 
 def show_peter_help():
