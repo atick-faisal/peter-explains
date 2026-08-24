@@ -1016,13 +1016,13 @@
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>Confused about what a fancy-ass command does? Put em inside <code>" "</code> after peter. I'll handle the rest.
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>$<span class="w"> </span>peter<span class="w"> </span><span class="s2">&quot;find . -name &quot;</span>node_modules<span class="s2">&quot; -type d -prune -exec rm -rf &#39;{}&#39; +&quot;</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>$<span class="w"> </span>peter<span class="w"> </span><span class="s2">"find . -name "</span>node_modules<span class="s2">" -type d -prune -exec rm -rf '{}' +"</span>
 </span></code></pre></div></p>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <h3 id="retep-is-gonna-ruin-your-day-if-you-try-to-use-it-without-the-api-key">Retep is gonna ruin your day if you try to use it without the API KEY</h3>
-<div class="language-text highlight"><pre><span></span><code>Don&#39;t worry. Meg&#39;s here to help. You need a FREE Google Gemini API KEY.
+<div class="language-text highlight"><pre><span></span><code>Don't worry. Meg's here to help. You need a FREE Google Gemini API KEY.
 
 - Get yours from here: [https://aistudio.google.com/app/](https://aistudio.google.com/app/)
 - Save the `API KEY` to your Environment by running the following:
@@ -1065,7 +1065,7 @@ Run the tests like this:
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>$<span class="w"> </span>pytest
 </span></code></pre></div>
 Don't forget to check your linting before pushing:
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>$<span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span>pylint<span class="w"> </span><span class="k">$(</span>git<span class="w"> </span>ls-files<span class="w"> </span><span class="s1">&#39;*.py&#39;</span><span class="k">)</span><span class="w"> </span>--rcfile<span class="w"> </span>.pylintrc
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>$<span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span>pylint<span class="w"> </span><span class="k">$(</span>git<span class="w"> </span>ls-files<span class="w"> </span><span class="s1">'*.py'</span><span class="k">)</span><span class="w"> </span>--rcfile<span class="w"> </span>.pylintrc
 </span></code></pre></div></p>
 </div>
 <h3 id="disclaimer"><strong>Disclaimer</strong> <img src="assets/meg.png" alt="Whatever" width="150" height="150" align="left"></h3>
