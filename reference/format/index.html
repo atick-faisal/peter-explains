@@ -19,7 +19,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
     
     
       
@@ -27,10 +27,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.57a0d79d.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.fb2fffe2.min.css">
       
       
 
@@ -1109,77 +1109,77 @@
 
             <details class="mkdocstrings-source">
               <summary>Source code in <code>src/peter_explains/format.py</code></summary>
-              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-17">17</a></span>
-<span class="normal"><a href="#__codelineno-0-18">18</a></span>
-<span class="normal"><a href="#__codelineno-0-19">19</a></span>
-<span class="normal"><a href="#__codelineno-0-20">20</a></span>
-<span class="normal"><a href="#__codelineno-0-21">21</a></span>
-<span class="normal"><a href="#__codelineno-0-22">22</a></span>
-<span class="normal"><a href="#__codelineno-0-23">23</a></span>
-<span class="normal"><a href="#__codelineno-0-24">24</a></span>
-<span class="normal"><a href="#__codelineno-0-25">25</a></span>
-<span class="normal"><a href="#__codelineno-0-26">26</a></span>
-<span class="normal"><a href="#__codelineno-0-27">27</a></span>
-<span class="normal"><a href="#__codelineno-0-28">28</a></span>
-<span class="normal"><a href="#__codelineno-0-29">29</a></span>
-<span class="normal"><a href="#__codelineno-0-30">30</a></span>
-<span class="normal"><a href="#__codelineno-0-31">31</a></span>
-<span class="normal"><a href="#__codelineno-0-32">32</a></span>
-<span class="normal"><a href="#__codelineno-0-33">33</a></span>
-<span class="normal"><a href="#__codelineno-0-34">34</a></span>
-<span class="normal"><a href="#__codelineno-0-35">35</a></span>
-<span class="normal"><a href="#__codelineno-0-36">36</a></span>
-<span class="normal"><a href="#__codelineno-0-37">37</a></span>
-<span class="normal"><a href="#__codelineno-0-38">38</a></span>
-<span class="normal"><a href="#__codelineno-0-39">39</a></span>
-<span class="normal"><a href="#__codelineno-0-40">40</a></span>
-<span class="normal"><a href="#__codelineno-0-41">41</a></span>
-<span class="normal"><a href="#__codelineno-0-42">42</a></span>
-<span class="normal"><a href="#__codelineno-0-43">43</a></span>
-<span class="normal"><a href="#__codelineno-0-44">44</a></span>
-<span class="normal"><a href="#__codelineno-0-45">45</a></span>
-<span class="normal"><a href="#__codelineno-0-46">46</a></span>
-<span class="normal"><a href="#__codelineno-0-47">47</a></span>
-<span class="normal"><a href="#__codelineno-0-48">48</a></span>
-<span class="normal"><a href="#__codelineno-0-49">49</a></span>
-<span class="normal"><a href="#__codelineno-0-50">50</a></span>
-<span class="normal"><a href="#__codelineno-0-51">51</a></span>
-<span class="normal"><a href="#__codelineno-0-52">52</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17"></a><span class="k">def</span><span class="w"> </span><span class="nf">pretty_print_result</span><span class="p">(</span><span class="n">result</span><span class="p">:</span> <span class="n">CommandExplanation</span> <span class="o">|</span> <span class="n">CommandExplanationWithArguments</span><span class="p">):</span>
-</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18"></a><span class="w">    </span><span class="sd">"""</span>
-</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19"></a><span class="sd">    Prints the command explanation or command explanation with arguments in a formatted manner.</span>
-</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20"></a>
-</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21"></a><span class="sd">    Args:</span>
-</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22"></a><span class="sd">        result (CommandExplanation | CommandExplanationWithArguments): The result to be printed.</span>
-</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23"></a>
-</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24"></a><span class="sd">    Returns:</span>
-</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25"></a><span class="sd">        None</span>
-</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26"></a><span class="sd">    """</span>
-</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27"></a>    <span class="nb">print</span><span class="p">(</span>
-</span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28"></a>        <span class="n">Fore</span><span class="o">.</span><span class="n">CYAN</span>
-</span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29"></a>        <span class="o">+</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">Command: "</span>
-</span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30"></a>        <span class="o">+</span> <span class="n">Style</span><span class="o">.</span><span class="n">RESET_ALL</span>
-</span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31"></a>        <span class="o">+</span> <span class="n">Style</span><span class="o">.</span><span class="n">BRIGHT</span>
-</span><span id="__span-0-32"><a id="__codelineno-0-32" name="__codelineno-0-32"></a>        <span class="o">+</span> <span class="n">_clean</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">command</span><span class="p">)</span>
-</span><span id="__span-0-33"><a id="__codelineno-0-33" name="__codelineno-0-33"></a>        <span class="o">+</span> <span class="n">Style</span><span class="o">.</span><span class="n">RESET_ALL</span>
-</span><span id="__span-0-34"><a id="__codelineno-0-34" name="__codelineno-0-34"></a>    <span class="p">)</span>
-</span><span id="__span-0-35"><a id="__codelineno-0-35" name="__codelineno-0-35"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">Fore</span><span class="o">.</span><span class="n">YELLOW</span> <span class="o">+</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">Purpose:</span><span class="se">\n</span><span class="s2">"</span> <span class="o">+</span> <span class="n">Style</span><span class="o">.</span><span class="n">RESET_ALL</span> <span class="o">+</span> <span class="n">_clean</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">purpose</span><span class="p">))</span>
-</span><span id="__span-0-36"><a id="__codelineno-0-36" name="__codelineno-0-36"></a>
-</span><span id="__span-0-37"><a id="__codelineno-0-37" name="__codelineno-0-37"></a>    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">CommandExplanation</span><span class="p">):</span>
-</span><span id="__span-0-38"><a id="__codelineno-0-38" name="__codelineno-0-38"></a>        <span class="nb">print</span><span class="p">(</span><span class="n">Fore</span><span class="o">.</span><span class="n">YELLOW</span> <span class="o">+</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">Syntax:"</span> <span class="o">+</span> <span class="n">Style</span><span class="o">.</span><span class="n">RESET_ALL</span><span class="p">)</span>
-</span><span id="__span-0-39"><a id="__codelineno-0-39" name="__codelineno-0-39"></a>        <span class="nb">print</span><span class="p">(</span><span class="n">Fore</span><span class="o">.</span><span class="n">LIGHTBLACK_EX</span> <span class="o">+</span> <span class="n">_clean</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">syntax</span><span class="p">)</span> <span class="o">+</span> <span class="n">Style</span><span class="o">.</span><span class="n">RESET_ALL</span> <span class="o">+</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
-</span><span id="__span-0-40"><a id="__codelineno-0-40" name="__codelineno-0-40"></a>
-</span><span id="__span-0-41"><a id="__codelineno-0-41" name="__codelineno-0-41"></a>        <span class="nb">print</span><span class="p">(</span><span class="n">Fore</span><span class="o">.</span><span class="n">YELLOW</span> <span class="o">+</span> <span class="s2">"Options:"</span> <span class="o">+</span> <span class="n">Style</span><span class="o">.</span><span class="n">RESET_ALL</span><span class="p">)</span>
-</span><span id="__span-0-42"><a id="__codelineno-0-42" name="__codelineno-0-42"></a>        <span class="k">for</span> <span class="n">option</span> <span class="ow">in</span> <span class="n">result</span><span class="o">.</span><span class="n">options</span><span class="p">:</span>
-</span><span id="__span-0-43"><a id="__codelineno-0-43" name="__codelineno-0-43"></a>            <span class="nb">print</span><span class="p">(</span><span class="n">Fore</span><span class="o">.</span><span class="n">BLUE</span> <span class="o">+</span> <span class="sa">f</span><span class="s2">"* </span><span class="si">{</span><span class="n">_clean</span><span class="p">(</span><span class="n">option</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span> <span class="o">+</span> <span class="n">Style</span><span class="o">.</span><span class="n">RESET_ALL</span><span class="p">)</span>
-</span><span id="__span-0-44"><a id="__codelineno-0-44" name="__codelineno-0-44"></a>
-</span><span id="__span-0-45"><a id="__codelineno-0-45" name="__codelineno-0-45"></a>        <span class="nb">print</span><span class="p">(</span><span class="n">Fore</span><span class="o">.</span><span class="n">YELLOW</span> <span class="o">+</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">Examples:"</span> <span class="o">+</span> <span class="n">Style</span><span class="o">.</span><span class="n">RESET_ALL</span><span class="p">)</span>
-</span><span id="__span-0-46"><a id="__codelineno-0-46" name="__codelineno-0-46"></a>        <span class="k">for</span> <span class="n">example</span> <span class="ow">in</span> <span class="n">result</span><span class="o">.</span><span class="n">examples</span><span class="p">:</span>
-</span><span id="__span-0-47"><a id="__codelineno-0-47" name="__codelineno-0-47"></a>            <span class="nb">print</span><span class="p">(</span><span class="n">Fore</span><span class="o">.</span><span class="n">GREEN</span> <span class="o">+</span> <span class="s2">"* "</span> <span class="o">+</span> <span class="n">_clean</span><span class="p">(</span><span class="n">example</span><span class="p">)</span> <span class="o">+</span> <span class="n">Style</span><span class="o">.</span><span class="n">RESET_ALL</span><span class="p">)</span>
-</span><span id="__span-0-48"><a id="__codelineno-0-48" name="__codelineno-0-48"></a>
-</span><span id="__span-0-49"><a id="__codelineno-0-49" name="__codelineno-0-49"></a>    <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">CommandExplanationWithArguments</span><span class="p">):</span>
-</span><span id="__span-0-50"><a id="__codelineno-0-50" name="__codelineno-0-50"></a>        <span class="nb">print</span><span class="p">(</span><span class="n">Fore</span><span class="o">.</span><span class="n">YELLOW</span> <span class="o">+</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">Breakdown:"</span> <span class="o">+</span> <span class="n">Style</span><span class="o">.</span><span class="n">RESET_ALL</span><span class="p">)</span>
-</span><span id="__span-0-51"><a id="__codelineno-0-51" name="__codelineno-0-51"></a>        <span class="k">for</span> <span class="n">explanation</span> <span class="ow">in</span> <span class="n">result</span><span class="o">.</span><span class="n">breakdown</span><span class="p">:</span>
-</span><span id="__span-0-52"><a id="__codelineno-0-52" name="__codelineno-0-52"></a>            <span class="nb">print</span><span class="p">(</span><span class="n">Fore</span><span class="o">.</span><span class="n">GREEN</span> <span class="o">+</span> <span class="sa">f</span><span class="s2">"* </span><span class="si">{</span><span class="n">_clean</span><span class="p">(</span><span class="n">explanation</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span> <span class="o">+</span> <span class="n">Style</span><span class="o">.</span><span class="n">RESET_ALL</span><span class="p">)</span>
+              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#peter_explains.format.pretty_print_result--source--__codelineno-0-17">17</a></span>
+<span class="normal"><a href="#peter_explains.format.pretty_print_result--source--__codelineno-0-18">18</a></span>
+<span class="normal"><a href="#peter_explains.format.pretty_print_result--source--__codelineno-0-19">19</a></span>
+<span class="normal"><a href="#peter_explains.format.pretty_print_result--source--__codelineno-0-20">20</a></span>
+<span class="normal"><a href="#peter_explains.format.pretty_print_result--source--__codelineno-0-21">21</a></span>
+<span class="normal"><a href="#peter_explains.format.pretty_print_result--source--__codelineno-0-22">22</a></span>
+<span class="normal"><a href="#peter_explains.format.pretty_print_result--source--__codelineno-0-23">23</a></span>
+<span class="normal"><a href="#peter_explains.format.pretty_print_result--source--__codelineno-0-24">24</a></span>
+<span class="normal"><a href="#peter_explains.format.pretty_print_result--source--__codelineno-0-25">25</a></span>
+<span class="normal"><a href="#peter_explains.format.pretty_print_result--source--__codelineno-0-26">26</a></span>
+<span class="normal"><a href="#peter_explains.format.pretty_print_result--source--__codelineno-0-27">27</a></span>
+<span class="normal"><a href="#peter_explains.format.pretty_print_result--source--__codelineno-0-28">28</a></span>
+<span class="normal"><a href="#peter_explains.format.pretty_print_result--source--__codelineno-0-29">29</a></span>
+<span class="normal"><a href="#peter_explains.format.pretty_print_result--source--__codelineno-0-30">30</a></span>
+<span class="normal"><a href="#peter_explains.format.pretty_print_result--source--__codelineno-0-31">31</a></span>
+<span class="normal"><a href="#peter_explains.format.pretty_print_result--source--__codelineno-0-32">32</a></span>
+<span class="normal"><a href="#peter_explains.format.pretty_print_result--source--__codelineno-0-33">33</a></span>
+<span class="normal"><a href="#peter_explains.format.pretty_print_result--source--__codelineno-0-34">34</a></span>
+<span class="normal"><a href="#peter_explains.format.pretty_print_result--source--__codelineno-0-35">35</a></span>
+<span class="normal"><a href="#peter_explains.format.pretty_print_result--source--__codelineno-0-36">36</a></span>
+<span class="normal"><a href="#peter_explains.format.pretty_print_result--source--__codelineno-0-37">37</a></span>
+<span class="normal"><a href="#peter_explains.format.pretty_print_result--source--__codelineno-0-38">38</a></span>
+<span class="normal"><a href="#peter_explains.format.pretty_print_result--source--__codelineno-0-39">39</a></span>
+<span class="normal"><a href="#peter_explains.format.pretty_print_result--source--__codelineno-0-40">40</a></span>
+<span class="normal"><a href="#peter_explains.format.pretty_print_result--source--__codelineno-0-41">41</a></span>
+<span class="normal"><a href="#peter_explains.format.pretty_print_result--source--__codelineno-0-42">42</a></span>
+<span class="normal"><a href="#peter_explains.format.pretty_print_result--source--__codelineno-0-43">43</a></span>
+<span class="normal"><a href="#peter_explains.format.pretty_print_result--source--__codelineno-0-44">44</a></span>
+<span class="normal"><a href="#peter_explains.format.pretty_print_result--source--__codelineno-0-45">45</a></span>
+<span class="normal"><a href="#peter_explains.format.pretty_print_result--source--__codelineno-0-46">46</a></span>
+<span class="normal"><a href="#peter_explains.format.pretty_print_result--source--__codelineno-0-47">47</a></span>
+<span class="normal"><a href="#peter_explains.format.pretty_print_result--source--__codelineno-0-48">48</a></span>
+<span class="normal"><a href="#peter_explains.format.pretty_print_result--source--__codelineno-0-49">49</a></span>
+<span class="normal"><a href="#peter_explains.format.pretty_print_result--source--__codelineno-0-50">50</a></span>
+<span class="normal"><a href="#peter_explains.format.pretty_print_result--source--__codelineno-0-51">51</a></span>
+<span class="normal"><a href="#peter_explains.format.pretty_print_result--source--__codelineno-0-52">52</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="peter_explains.format.pretty_print_result--source--__span-0-17"><a id="peter_explains.format.pretty_print_result--source--__codelineno-0-17" name="peter_explains.format.pretty_print_result--source--__codelineno-0-17"></a><span class="k">def</span><span class="w"> </span><span class="nf">pretty_print_result</span><span class="p">(</span><span class="n">result</span><span class="p">:</span> <span class="n">CommandExplanation</span> <span class="o">|</span> <span class="n">CommandExplanationWithArguments</span><span class="p">):</span>
+</span><span id="peter_explains.format.pretty_print_result--source--__span-0-18"><a id="peter_explains.format.pretty_print_result--source--__codelineno-0-18" name="peter_explains.format.pretty_print_result--source--__codelineno-0-18"></a><span class="w">    </span><span class="sd">"""</span>
+</span><span id="peter_explains.format.pretty_print_result--source--__span-0-19"><a id="peter_explains.format.pretty_print_result--source--__codelineno-0-19" name="peter_explains.format.pretty_print_result--source--__codelineno-0-19"></a><span class="sd">    Prints the command explanation or command explanation with arguments in a formatted manner.</span>
+</span><span id="peter_explains.format.pretty_print_result--source--__span-0-20"><a id="peter_explains.format.pretty_print_result--source--__codelineno-0-20" name="peter_explains.format.pretty_print_result--source--__codelineno-0-20"></a>
+</span><span id="peter_explains.format.pretty_print_result--source--__span-0-21"><a id="peter_explains.format.pretty_print_result--source--__codelineno-0-21" name="peter_explains.format.pretty_print_result--source--__codelineno-0-21"></a><span class="sd">    Args:</span>
+</span><span id="peter_explains.format.pretty_print_result--source--__span-0-22"><a id="peter_explains.format.pretty_print_result--source--__codelineno-0-22" name="peter_explains.format.pretty_print_result--source--__codelineno-0-22"></a><span class="sd">        result (CommandExplanation | CommandExplanationWithArguments): The result to be printed.</span>
+</span><span id="peter_explains.format.pretty_print_result--source--__span-0-23"><a id="peter_explains.format.pretty_print_result--source--__codelineno-0-23" name="peter_explains.format.pretty_print_result--source--__codelineno-0-23"></a>
+</span><span id="peter_explains.format.pretty_print_result--source--__span-0-24"><a id="peter_explains.format.pretty_print_result--source--__codelineno-0-24" name="peter_explains.format.pretty_print_result--source--__codelineno-0-24"></a><span class="sd">    Returns:</span>
+</span><span id="peter_explains.format.pretty_print_result--source--__span-0-25"><a id="peter_explains.format.pretty_print_result--source--__codelineno-0-25" name="peter_explains.format.pretty_print_result--source--__codelineno-0-25"></a><span class="sd">        None</span>
+</span><span id="peter_explains.format.pretty_print_result--source--__span-0-26"><a id="peter_explains.format.pretty_print_result--source--__codelineno-0-26" name="peter_explains.format.pretty_print_result--source--__codelineno-0-26"></a><span class="sd">    """</span>
+</span><span id="peter_explains.format.pretty_print_result--source--__span-0-27"><a id="peter_explains.format.pretty_print_result--source--__codelineno-0-27" name="peter_explains.format.pretty_print_result--source--__codelineno-0-27"></a>    <span class="nb">print</span><span class="p">(</span>
+</span><span id="peter_explains.format.pretty_print_result--source--__span-0-28"><a id="peter_explains.format.pretty_print_result--source--__codelineno-0-28" name="peter_explains.format.pretty_print_result--source--__codelineno-0-28"></a>        <span class="n">Fore</span><span class="o">.</span><span class="n">CYAN</span>
+</span><span id="peter_explains.format.pretty_print_result--source--__span-0-29"><a id="peter_explains.format.pretty_print_result--source--__codelineno-0-29" name="peter_explains.format.pretty_print_result--source--__codelineno-0-29"></a>        <span class="o">+</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">Command: "</span>
+</span><span id="peter_explains.format.pretty_print_result--source--__span-0-30"><a id="peter_explains.format.pretty_print_result--source--__codelineno-0-30" name="peter_explains.format.pretty_print_result--source--__codelineno-0-30"></a>        <span class="o">+</span> <span class="n">Style</span><span class="o">.</span><span class="n">RESET_ALL</span>
+</span><span id="peter_explains.format.pretty_print_result--source--__span-0-31"><a id="peter_explains.format.pretty_print_result--source--__codelineno-0-31" name="peter_explains.format.pretty_print_result--source--__codelineno-0-31"></a>        <span class="o">+</span> <span class="n">Style</span><span class="o">.</span><span class="n">BRIGHT</span>
+</span><span id="peter_explains.format.pretty_print_result--source--__span-0-32"><a id="peter_explains.format.pretty_print_result--source--__codelineno-0-32" name="peter_explains.format.pretty_print_result--source--__codelineno-0-32"></a>        <span class="o">+</span> <span class="n">_clean</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">command</span><span class="p">)</span>
+</span><span id="peter_explains.format.pretty_print_result--source--__span-0-33"><a id="peter_explains.format.pretty_print_result--source--__codelineno-0-33" name="peter_explains.format.pretty_print_result--source--__codelineno-0-33"></a>        <span class="o">+</span> <span class="n">Style</span><span class="o">.</span><span class="n">RESET_ALL</span>
+</span><span id="peter_explains.format.pretty_print_result--source--__span-0-34"><a id="peter_explains.format.pretty_print_result--source--__codelineno-0-34" name="peter_explains.format.pretty_print_result--source--__codelineno-0-34"></a>    <span class="p">)</span>
+</span><span id="peter_explains.format.pretty_print_result--source--__span-0-35"><a id="peter_explains.format.pretty_print_result--source--__codelineno-0-35" name="peter_explains.format.pretty_print_result--source--__codelineno-0-35"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">Fore</span><span class="o">.</span><span class="n">YELLOW</span> <span class="o">+</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">Purpose:</span><span class="se">\n</span><span class="s2">"</span> <span class="o">+</span> <span class="n">Style</span><span class="o">.</span><span class="n">RESET_ALL</span> <span class="o">+</span> <span class="n">_clean</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">purpose</span><span class="p">))</span>
+</span><span id="peter_explains.format.pretty_print_result--source--__span-0-36"><a id="peter_explains.format.pretty_print_result--source--__codelineno-0-36" name="peter_explains.format.pretty_print_result--source--__codelineno-0-36"></a>
+</span><span id="peter_explains.format.pretty_print_result--source--__span-0-37"><a id="peter_explains.format.pretty_print_result--source--__codelineno-0-37" name="peter_explains.format.pretty_print_result--source--__codelineno-0-37"></a>    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">CommandExplanation</span><span class="p">):</span>
+</span><span id="peter_explains.format.pretty_print_result--source--__span-0-38"><a id="peter_explains.format.pretty_print_result--source--__codelineno-0-38" name="peter_explains.format.pretty_print_result--source--__codelineno-0-38"></a>        <span class="nb">print</span><span class="p">(</span><span class="n">Fore</span><span class="o">.</span><span class="n">YELLOW</span> <span class="o">+</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">Syntax:"</span> <span class="o">+</span> <span class="n">Style</span><span class="o">.</span><span class="n">RESET_ALL</span><span class="p">)</span>
+</span><span id="peter_explains.format.pretty_print_result--source--__span-0-39"><a id="peter_explains.format.pretty_print_result--source--__codelineno-0-39" name="peter_explains.format.pretty_print_result--source--__codelineno-0-39"></a>        <span class="nb">print</span><span class="p">(</span><span class="n">Fore</span><span class="o">.</span><span class="n">LIGHTBLACK_EX</span> <span class="o">+</span> <span class="n">_clean</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">syntax</span><span class="p">)</span> <span class="o">+</span> <span class="n">Style</span><span class="o">.</span><span class="n">RESET_ALL</span> <span class="o">+</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+</span><span id="peter_explains.format.pretty_print_result--source--__span-0-40"><a id="peter_explains.format.pretty_print_result--source--__codelineno-0-40" name="peter_explains.format.pretty_print_result--source--__codelineno-0-40"></a>
+</span><span id="peter_explains.format.pretty_print_result--source--__span-0-41"><a id="peter_explains.format.pretty_print_result--source--__codelineno-0-41" name="peter_explains.format.pretty_print_result--source--__codelineno-0-41"></a>        <span class="nb">print</span><span class="p">(</span><span class="n">Fore</span><span class="o">.</span><span class="n">YELLOW</span> <span class="o">+</span> <span class="s2">"Options:"</span> <span class="o">+</span> <span class="n">Style</span><span class="o">.</span><span class="n">RESET_ALL</span><span class="p">)</span>
+</span><span id="peter_explains.format.pretty_print_result--source--__span-0-42"><a id="peter_explains.format.pretty_print_result--source--__codelineno-0-42" name="peter_explains.format.pretty_print_result--source--__codelineno-0-42"></a>        <span class="k">for</span> <span class="n">option</span> <span class="ow">in</span> <span class="n">result</span><span class="o">.</span><span class="n">options</span><span class="p">:</span>
+</span><span id="peter_explains.format.pretty_print_result--source--__span-0-43"><a id="peter_explains.format.pretty_print_result--source--__codelineno-0-43" name="peter_explains.format.pretty_print_result--source--__codelineno-0-43"></a>            <span class="nb">print</span><span class="p">(</span><span class="n">Fore</span><span class="o">.</span><span class="n">BLUE</span> <span class="o">+</span> <span class="sa">f</span><span class="s2">"* </span><span class="si">{</span><span class="n">_clean</span><span class="p">(</span><span class="n">option</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span> <span class="o">+</span> <span class="n">Style</span><span class="o">.</span><span class="n">RESET_ALL</span><span class="p">)</span>
+</span><span id="peter_explains.format.pretty_print_result--source--__span-0-44"><a id="peter_explains.format.pretty_print_result--source--__codelineno-0-44" name="peter_explains.format.pretty_print_result--source--__codelineno-0-44"></a>
+</span><span id="peter_explains.format.pretty_print_result--source--__span-0-45"><a id="peter_explains.format.pretty_print_result--source--__codelineno-0-45" name="peter_explains.format.pretty_print_result--source--__codelineno-0-45"></a>        <span class="nb">print</span><span class="p">(</span><span class="n">Fore</span><span class="o">.</span><span class="n">YELLOW</span> <span class="o">+</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">Examples:"</span> <span class="o">+</span> <span class="n">Style</span><span class="o">.</span><span class="n">RESET_ALL</span><span class="p">)</span>
+</span><span id="peter_explains.format.pretty_print_result--source--__span-0-46"><a id="peter_explains.format.pretty_print_result--source--__codelineno-0-46" name="peter_explains.format.pretty_print_result--source--__codelineno-0-46"></a>        <span class="k">for</span> <span class="n">example</span> <span class="ow">in</span> <span class="n">result</span><span class="o">.</span><span class="n">examples</span><span class="p">:</span>
+</span><span id="peter_explains.format.pretty_print_result--source--__span-0-47"><a id="peter_explains.format.pretty_print_result--source--__codelineno-0-47" name="peter_explains.format.pretty_print_result--source--__codelineno-0-47"></a>            <span class="nb">print</span><span class="p">(</span><span class="n">Fore</span><span class="o">.</span><span class="n">GREEN</span> <span class="o">+</span> <span class="s2">"* "</span> <span class="o">+</span> <span class="n">_clean</span><span class="p">(</span><span class="n">example</span><span class="p">)</span> <span class="o">+</span> <span class="n">Style</span><span class="o">.</span><span class="n">RESET_ALL</span><span class="p">)</span>
+</span><span id="peter_explains.format.pretty_print_result--source--__span-0-48"><a id="peter_explains.format.pretty_print_result--source--__codelineno-0-48" name="peter_explains.format.pretty_print_result--source--__codelineno-0-48"></a>
+</span><span id="peter_explains.format.pretty_print_result--source--__span-0-49"><a id="peter_explains.format.pretty_print_result--source--__codelineno-0-49" name="peter_explains.format.pretty_print_result--source--__codelineno-0-49"></a>    <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">CommandExplanationWithArguments</span><span class="p">):</span>
+</span><span id="peter_explains.format.pretty_print_result--source--__span-0-50"><a id="peter_explains.format.pretty_print_result--source--__codelineno-0-50" name="peter_explains.format.pretty_print_result--source--__codelineno-0-50"></a>        <span class="nb">print</span><span class="p">(</span><span class="n">Fore</span><span class="o">.</span><span class="n">YELLOW</span> <span class="o">+</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">Breakdown:"</span> <span class="o">+</span> <span class="n">Style</span><span class="o">.</span><span class="n">RESET_ALL</span><span class="p">)</span>
+</span><span id="peter_explains.format.pretty_print_result--source--__span-0-51"><a id="peter_explains.format.pretty_print_result--source--__codelineno-0-51" name="peter_explains.format.pretty_print_result--source--__codelineno-0-51"></a>        <span class="k">for</span> <span class="n">explanation</span> <span class="ow">in</span> <span class="n">result</span><span class="o">.</span><span class="n">breakdown</span><span class="p">:</span>
+</span><span id="peter_explains.format.pretty_print_result--source--__span-0-52"><a id="peter_explains.format.pretty_print_result--source--__codelineno-0-52" name="peter_explains.format.pretty_print_result--source--__codelineno-0-52"></a>            <span class="nb">print</span><span class="p">(</span><span class="n">Fore</span><span class="o">.</span><span class="n">GREEN</span> <span class="o">+</span> <span class="sa">f</span><span class="s2">"* </span><span class="si">{</span><span class="n">_clean</span><span class="p">(</span><span class="n">explanation</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span> <span class="o">+</span> <span class="n">Style</span><span class="o">.</span><span class="n">RESET_ALL</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
     </div>
@@ -1380,10 +1380,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.indexes", "navigation.top", "content.action.view", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.indexes", "navigation.top", "content.action.view", "content.code.copy"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../assets/javascripts/bundle.c21346df.min.js"></script>
       
     
   </body>

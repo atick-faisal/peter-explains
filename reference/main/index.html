@@ -19,7 +19,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
     
     
       
@@ -27,10 +27,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.57a0d79d.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.fb2fffe2.min.css">
       
       
 
@@ -1074,73 +1074,73 @@ It uses the asyncio library to run the main Peter Explains CLI.</p>
 
             <details class="mkdocstrings-source">
               <summary>Source code in <code>src/peter_explains/main.py</code></summary>
-              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-17">17</a></span>
-<span class="normal"><a href="#__codelineno-0-18">18</a></span>
-<span class="normal"><a href="#__codelineno-0-19">19</a></span>
-<span class="normal"><a href="#__codelineno-0-20">20</a></span>
-<span class="normal"><a href="#__codelineno-0-21">21</a></span>
-<span class="normal"><a href="#__codelineno-0-22">22</a></span>
-<span class="normal"><a href="#__codelineno-0-23">23</a></span>
-<span class="normal"><a href="#__codelineno-0-24">24</a></span>
-<span class="normal"><a href="#__codelineno-0-25">25</a></span>
-<span class="normal"><a href="#__codelineno-0-26">26</a></span>
-<span class="normal"><a href="#__codelineno-0-27">27</a></span>
-<span class="normal"><a href="#__codelineno-0-28">28</a></span>
-<span class="normal"><a href="#__codelineno-0-29">29</a></span>
-<span class="normal"><a href="#__codelineno-0-30">30</a></span>
-<span class="normal"><a href="#__codelineno-0-31">31</a></span>
-<span class="normal"><a href="#__codelineno-0-32">32</a></span>
-<span class="normal"><a href="#__codelineno-0-33">33</a></span>
-<span class="normal"><a href="#__codelineno-0-34">34</a></span>
-<span class="normal"><a href="#__codelineno-0-35">35</a></span>
-<span class="normal"><a href="#__codelineno-0-36">36</a></span>
-<span class="normal"><a href="#__codelineno-0-37">37</a></span>
-<span class="normal"><a href="#__codelineno-0-38">38</a></span>
-<span class="normal"><a href="#__codelineno-0-39">39</a></span>
-<span class="normal"><a href="#__codelineno-0-40">40</a></span>
-<span class="normal"><a href="#__codelineno-0-41">41</a></span>
-<span class="normal"><a href="#__codelineno-0-42">42</a></span>
-<span class="normal"><a href="#__codelineno-0-43">43</a></span>
-<span class="normal"><a href="#__codelineno-0-44">44</a></span>
-<span class="normal"><a href="#__codelineno-0-45">45</a></span>
-<span class="normal"><a href="#__codelineno-0-46">46</a></span>
-<span class="normal"><a href="#__codelineno-0-47">47</a></span>
-<span class="normal"><a href="#__codelineno-0-48">48</a></span>
-<span class="normal"><a href="#__codelineno-0-49">49</a></span>
-<span class="normal"><a href="#__codelineno-0-50">50</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17"></a><span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">command</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
-</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18"></a><span class="w">    </span><span class="sd">"""</span>
-</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19"></a><span class="sd">    Main function to run the Peter Explains CLI.</span>
-</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20"></a>
-</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21"></a><span class="sd">    This function is an async function that runs the main Peter Explains CLI.</span>
-</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22"></a><span class="sd">    It uses the asyncio library to run the main Peter Explains CLI.</span>
-</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23"></a><span class="sd">    """</span>
-</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24"></a>
-</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25"></a>    <span class="k">try</span><span class="p">:</span>
-</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26"></a>        <span class="c1"># command = parse_arguments()</span>
-</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27"></a>        <span class="n">peter_ai</span> <span class="o">=</span> <span class="n">PeterAi</span><span class="p">()</span>
-</span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28"></a>        <span class="n">cache</span> <span class="o">=</span> <span class="n">PeterCache</span><span class="p">()</span>
-</span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29"></a>
-</span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30"></a>        <span class="k">if</span> <span class="n">command</span> <span class="ow">in</span> <span class="n">cache</span><span class="p">:</span>  <span class="c1"># Check in cache</span>
-</span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31"></a>            <span class="n">result</span> <span class="o">=</span> <span class="n">cache</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">command</span><span class="p">)</span>
-</span><span id="__span-0-32"><a id="__codelineno-0-32" name="__codelineno-0-32"></a>
-</span><span id="__span-0-33"><a id="__codelineno-0-33" name="__codelineno-0-33"></a>        <span class="k">else</span><span class="p">:</span>
-</span><span id="__span-0-34"><a id="__codelineno-0-34" name="__codelineno-0-34"></a>            <span class="n">tasks</span> <span class="o">=</span> <span class="p">[</span>
-</span><span id="__span-0-35"><a id="__codelineno-0-35" name="__codelineno-0-35"></a>                <span class="n">asyncio</span><span class="o">.</span><span class="n">create_task</span><span class="p">(</span><span class="n">show_loading_message</span><span class="p">()),</span>
-</span><span id="__span-0-36"><a id="__codelineno-0-36" name="__codelineno-0-36"></a>                <span class="n">asyncio</span><span class="o">.</span><span class="n">create_task</span><span class="p">(</span><span class="n">peter_ai</span><span class="o">.</span><span class="n">explain_command</span><span class="p">(</span><span class="n">command</span><span class="p">)),</span>
-</span><span id="__span-0-37"><a id="__codelineno-0-37" name="__codelineno-0-37"></a>            <span class="p">]</span>
-</span><span id="__span-0-38"><a id="__codelineno-0-38" name="__codelineno-0-38"></a>            <span class="n">done</span><span class="p">,</span> <span class="n">pending</span> <span class="o">=</span> <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span>
-</span><span id="__span-0-39"><a id="__codelineno-0-39" name="__codelineno-0-39"></a>                <span class="n">tasks</span><span class="p">,</span> <span class="n">return_when</span><span class="o">=</span><span class="n">asyncio</span><span class="o">.</span><span class="n">FIRST_COMPLETED</span>
-</span><span id="__span-0-40"><a id="__codelineno-0-40" name="__codelineno-0-40"></a>            <span class="p">)</span>
-</span><span id="__span-0-41"><a id="__codelineno-0-41" name="__codelineno-0-41"></a>
-</span><span id="__span-0-42"><a id="__codelineno-0-42" name="__codelineno-0-42"></a>            <span class="n">pending</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span><span class="o">.</span><span class="n">cancel</span><span class="p">()</span>  <span class="c1"># Cancel the loading message task</span>
-</span><span id="__span-0-43"><a id="__codelineno-0-43" name="__codelineno-0-43"></a>            <span class="n">result</span> <span class="o">=</span> <span class="n">done</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span><span class="o">.</span><span class="n">result</span><span class="p">()</span>  <span class="c1"># Get the result of the explain_command task</span>
-</span><span id="__span-0-44"><a id="__codelineno-0-44" name="__codelineno-0-44"></a>
-</span><span id="__span-0-45"><a id="__codelineno-0-45" name="__codelineno-0-45"></a>            <span class="n">cache</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">command</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>  <span class="c1"># Save in cache</span>
-</span><span id="__span-0-46"><a id="__codelineno-0-46" name="__codelineno-0-46"></a>
-</span><span id="__span-0-47"><a id="__codelineno-0-47" name="__codelineno-0-47"></a>        <span class="n">pretty_print_result</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
-</span><span id="__span-0-48"><a id="__codelineno-0-48" name="__codelineno-0-48"></a>
-</span><span id="__span-0-49"><a id="__codelineno-0-49" name="__codelineno-0-49"></a>    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>  <span class="c1"># noqa: BLE001 — top-level CLI error boundary</span>
-</span><span id="__span-0-50"><a id="__codelineno-0-50" name="__codelineno-0-50"></a>        <span class="n">show_error_message</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#peter_explains.main.main--source--__codelineno-0-17">17</a></span>
+<span class="normal"><a href="#peter_explains.main.main--source--__codelineno-0-18">18</a></span>
+<span class="normal"><a href="#peter_explains.main.main--source--__codelineno-0-19">19</a></span>
+<span class="normal"><a href="#peter_explains.main.main--source--__codelineno-0-20">20</a></span>
+<span class="normal"><a href="#peter_explains.main.main--source--__codelineno-0-21">21</a></span>
+<span class="normal"><a href="#peter_explains.main.main--source--__codelineno-0-22">22</a></span>
+<span class="normal"><a href="#peter_explains.main.main--source--__codelineno-0-23">23</a></span>
+<span class="normal"><a href="#peter_explains.main.main--source--__codelineno-0-24">24</a></span>
+<span class="normal"><a href="#peter_explains.main.main--source--__codelineno-0-25">25</a></span>
+<span class="normal"><a href="#peter_explains.main.main--source--__codelineno-0-26">26</a></span>
+<span class="normal"><a href="#peter_explains.main.main--source--__codelineno-0-27">27</a></span>
+<span class="normal"><a href="#peter_explains.main.main--source--__codelineno-0-28">28</a></span>
+<span class="normal"><a href="#peter_explains.main.main--source--__codelineno-0-29">29</a></span>
+<span class="normal"><a href="#peter_explains.main.main--source--__codelineno-0-30">30</a></span>
+<span class="normal"><a href="#peter_explains.main.main--source--__codelineno-0-31">31</a></span>
+<span class="normal"><a href="#peter_explains.main.main--source--__codelineno-0-32">32</a></span>
+<span class="normal"><a href="#peter_explains.main.main--source--__codelineno-0-33">33</a></span>
+<span class="normal"><a href="#peter_explains.main.main--source--__codelineno-0-34">34</a></span>
+<span class="normal"><a href="#peter_explains.main.main--source--__codelineno-0-35">35</a></span>
+<span class="normal"><a href="#peter_explains.main.main--source--__codelineno-0-36">36</a></span>
+<span class="normal"><a href="#peter_explains.main.main--source--__codelineno-0-37">37</a></span>
+<span class="normal"><a href="#peter_explains.main.main--source--__codelineno-0-38">38</a></span>
+<span class="normal"><a href="#peter_explains.main.main--source--__codelineno-0-39">39</a></span>
+<span class="normal"><a href="#peter_explains.main.main--source--__codelineno-0-40">40</a></span>
+<span class="normal"><a href="#peter_explains.main.main--source--__codelineno-0-41">41</a></span>
+<span class="normal"><a href="#peter_explains.main.main--source--__codelineno-0-42">42</a></span>
+<span class="normal"><a href="#peter_explains.main.main--source--__codelineno-0-43">43</a></span>
+<span class="normal"><a href="#peter_explains.main.main--source--__codelineno-0-44">44</a></span>
+<span class="normal"><a href="#peter_explains.main.main--source--__codelineno-0-45">45</a></span>
+<span class="normal"><a href="#peter_explains.main.main--source--__codelineno-0-46">46</a></span>
+<span class="normal"><a href="#peter_explains.main.main--source--__codelineno-0-47">47</a></span>
+<span class="normal"><a href="#peter_explains.main.main--source--__codelineno-0-48">48</a></span>
+<span class="normal"><a href="#peter_explains.main.main--source--__codelineno-0-49">49</a></span>
+<span class="normal"><a href="#peter_explains.main.main--source--__codelineno-0-50">50</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="peter_explains.main.main--source--__span-0-17"><a id="peter_explains.main.main--source--__codelineno-0-17" name="peter_explains.main.main--source--__codelineno-0-17"></a><span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">command</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+</span><span id="peter_explains.main.main--source--__span-0-18"><a id="peter_explains.main.main--source--__codelineno-0-18" name="peter_explains.main.main--source--__codelineno-0-18"></a><span class="w">    </span><span class="sd">"""</span>
+</span><span id="peter_explains.main.main--source--__span-0-19"><a id="peter_explains.main.main--source--__codelineno-0-19" name="peter_explains.main.main--source--__codelineno-0-19"></a><span class="sd">    Main function to run the Peter Explains CLI.</span>
+</span><span id="peter_explains.main.main--source--__span-0-20"><a id="peter_explains.main.main--source--__codelineno-0-20" name="peter_explains.main.main--source--__codelineno-0-20"></a>
+</span><span id="peter_explains.main.main--source--__span-0-21"><a id="peter_explains.main.main--source--__codelineno-0-21" name="peter_explains.main.main--source--__codelineno-0-21"></a><span class="sd">    This function is an async function that runs the main Peter Explains CLI.</span>
+</span><span id="peter_explains.main.main--source--__span-0-22"><a id="peter_explains.main.main--source--__codelineno-0-22" name="peter_explains.main.main--source--__codelineno-0-22"></a><span class="sd">    It uses the asyncio library to run the main Peter Explains CLI.</span>
+</span><span id="peter_explains.main.main--source--__span-0-23"><a id="peter_explains.main.main--source--__codelineno-0-23" name="peter_explains.main.main--source--__codelineno-0-23"></a><span class="sd">    """</span>
+</span><span id="peter_explains.main.main--source--__span-0-24"><a id="peter_explains.main.main--source--__codelineno-0-24" name="peter_explains.main.main--source--__codelineno-0-24"></a>
+</span><span id="peter_explains.main.main--source--__span-0-25"><a id="peter_explains.main.main--source--__codelineno-0-25" name="peter_explains.main.main--source--__codelineno-0-25"></a>    <span class="k">try</span><span class="p">:</span>
+</span><span id="peter_explains.main.main--source--__span-0-26"><a id="peter_explains.main.main--source--__codelineno-0-26" name="peter_explains.main.main--source--__codelineno-0-26"></a>        <span class="c1"># command = parse_arguments()</span>
+</span><span id="peter_explains.main.main--source--__span-0-27"><a id="peter_explains.main.main--source--__codelineno-0-27" name="peter_explains.main.main--source--__codelineno-0-27"></a>        <span class="n">peter_ai</span> <span class="o">=</span> <span class="n">PeterAi</span><span class="p">()</span>
+</span><span id="peter_explains.main.main--source--__span-0-28"><a id="peter_explains.main.main--source--__codelineno-0-28" name="peter_explains.main.main--source--__codelineno-0-28"></a>        <span class="n">cache</span> <span class="o">=</span> <span class="n">PeterCache</span><span class="p">()</span>
+</span><span id="peter_explains.main.main--source--__span-0-29"><a id="peter_explains.main.main--source--__codelineno-0-29" name="peter_explains.main.main--source--__codelineno-0-29"></a>
+</span><span id="peter_explains.main.main--source--__span-0-30"><a id="peter_explains.main.main--source--__codelineno-0-30" name="peter_explains.main.main--source--__codelineno-0-30"></a>        <span class="k">if</span> <span class="n">command</span> <span class="ow">in</span> <span class="n">cache</span><span class="p">:</span>  <span class="c1"># Check in cache</span>
+</span><span id="peter_explains.main.main--source--__span-0-31"><a id="peter_explains.main.main--source--__codelineno-0-31" name="peter_explains.main.main--source--__codelineno-0-31"></a>            <span class="n">result</span> <span class="o">=</span> <span class="n">cache</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">command</span><span class="p">)</span>
+</span><span id="peter_explains.main.main--source--__span-0-32"><a id="peter_explains.main.main--source--__codelineno-0-32" name="peter_explains.main.main--source--__codelineno-0-32"></a>
+</span><span id="peter_explains.main.main--source--__span-0-33"><a id="peter_explains.main.main--source--__codelineno-0-33" name="peter_explains.main.main--source--__codelineno-0-33"></a>        <span class="k">else</span><span class="p">:</span>
+</span><span id="peter_explains.main.main--source--__span-0-34"><a id="peter_explains.main.main--source--__codelineno-0-34" name="peter_explains.main.main--source--__codelineno-0-34"></a>            <span class="n">tasks</span> <span class="o">=</span> <span class="p">[</span>
+</span><span id="peter_explains.main.main--source--__span-0-35"><a id="peter_explains.main.main--source--__codelineno-0-35" name="peter_explains.main.main--source--__codelineno-0-35"></a>                <span class="n">asyncio</span><span class="o">.</span><span class="n">create_task</span><span class="p">(</span><span class="n">show_loading_message</span><span class="p">()),</span>
+</span><span id="peter_explains.main.main--source--__span-0-36"><a id="peter_explains.main.main--source--__codelineno-0-36" name="peter_explains.main.main--source--__codelineno-0-36"></a>                <span class="n">asyncio</span><span class="o">.</span><span class="n">create_task</span><span class="p">(</span><span class="n">peter_ai</span><span class="o">.</span><span class="n">explain_command</span><span class="p">(</span><span class="n">command</span><span class="p">)),</span>
+</span><span id="peter_explains.main.main--source--__span-0-37"><a id="peter_explains.main.main--source--__codelineno-0-37" name="peter_explains.main.main--source--__codelineno-0-37"></a>            <span class="p">]</span>
+</span><span id="peter_explains.main.main--source--__span-0-38"><a id="peter_explains.main.main--source--__codelineno-0-38" name="peter_explains.main.main--source--__codelineno-0-38"></a>            <span class="n">done</span><span class="p">,</span> <span class="n">pending</span> <span class="o">=</span> <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span>
+</span><span id="peter_explains.main.main--source--__span-0-39"><a id="peter_explains.main.main--source--__codelineno-0-39" name="peter_explains.main.main--source--__codelineno-0-39"></a>                <span class="n">tasks</span><span class="p">,</span> <span class="n">return_when</span><span class="o">=</span><span class="n">asyncio</span><span class="o">.</span><span class="n">FIRST_COMPLETED</span>
+</span><span id="peter_explains.main.main--source--__span-0-40"><a id="peter_explains.main.main--source--__codelineno-0-40" name="peter_explains.main.main--source--__codelineno-0-40"></a>            <span class="p">)</span>
+</span><span id="peter_explains.main.main--source--__span-0-41"><a id="peter_explains.main.main--source--__codelineno-0-41" name="peter_explains.main.main--source--__codelineno-0-41"></a>
+</span><span id="peter_explains.main.main--source--__span-0-42"><a id="peter_explains.main.main--source--__codelineno-0-42" name="peter_explains.main.main--source--__codelineno-0-42"></a>            <span class="n">pending</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span><span class="o">.</span><span class="n">cancel</span><span class="p">()</span>  <span class="c1"># Cancel the loading message task</span>
+</span><span id="peter_explains.main.main--source--__span-0-43"><a id="peter_explains.main.main--source--__codelineno-0-43" name="peter_explains.main.main--source--__codelineno-0-43"></a>            <span class="n">result</span> <span class="o">=</span> <span class="n">done</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span><span class="o">.</span><span class="n">result</span><span class="p">()</span>  <span class="c1"># Get the result of the explain_command task</span>
+</span><span id="peter_explains.main.main--source--__span-0-44"><a id="peter_explains.main.main--source--__codelineno-0-44" name="peter_explains.main.main--source--__codelineno-0-44"></a>
+</span><span id="peter_explains.main.main--source--__span-0-45"><a id="peter_explains.main.main--source--__codelineno-0-45" name="peter_explains.main.main--source--__codelineno-0-45"></a>            <span class="n">cache</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">command</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>  <span class="c1"># Save in cache</span>
+</span><span id="peter_explains.main.main--source--__span-0-46"><a id="peter_explains.main.main--source--__codelineno-0-46" name="peter_explains.main.main--source--__codelineno-0-46"></a>
+</span><span id="peter_explains.main.main--source--__span-0-47"><a id="peter_explains.main.main--source--__codelineno-0-47" name="peter_explains.main.main--source--__codelineno-0-47"></a>        <span class="n">pretty_print_result</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</span><span id="peter_explains.main.main--source--__span-0-48"><a id="peter_explains.main.main--source--__codelineno-0-48" name="peter_explains.main.main--source--__codelineno-0-48"></a>
+</span><span id="peter_explains.main.main--source--__span-0-49"><a id="peter_explains.main.main--source--__codelineno-0-49" name="peter_explains.main.main--source--__codelineno-0-49"></a>    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>  <span class="c1"># noqa: BLE001 — top-level CLI error boundary</span>
+</span><span id="peter_explains.main.main--source--__span-0-50"><a id="peter_explains.main.main--source--__codelineno-0-50" name="peter_explains.main.main--source--__codelineno-0-50"></a>        <span class="n">show_error_message</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
     </div>
@@ -1165,101 +1165,101 @@ It runs the main function using the asyncio library.</p>
 
             <details class="mkdocstrings-source">
               <summary>Source code in <code>src/peter_explains/main.py</code></summary>
-              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-53"> 53</a></span>
-<span class="normal"><a href="#__codelineno-0-54"> 54</a></span>
-<span class="normal"><a href="#__codelineno-0-55"> 55</a></span>
-<span class="normal"><a href="#__codelineno-0-56"> 56</a></span>
-<span class="normal"><a href="#__codelineno-0-57"> 57</a></span>
-<span class="normal"><a href="#__codelineno-0-58"> 58</a></span>
-<span class="normal"><a href="#__codelineno-0-59"> 59</a></span>
-<span class="normal"><a href="#__codelineno-0-60"> 60</a></span>
-<span class="normal"><a href="#__codelineno-0-61"> 61</a></span>
-<span class="normal"><a href="#__codelineno-0-62"> 62</a></span>
-<span class="normal"><a href="#__codelineno-0-63"> 63</a></span>
-<span class="normal"><a href="#__codelineno-0-64"> 64</a></span>
-<span class="normal"><a href="#__codelineno-0-65"> 65</a></span>
-<span class="normal"><a href="#__codelineno-0-66"> 66</a></span>
-<span class="normal"><a href="#__codelineno-0-67"> 67</a></span>
-<span class="normal"><a href="#__codelineno-0-68"> 68</a></span>
-<span class="normal"><a href="#__codelineno-0-69"> 69</a></span>
-<span class="normal"><a href="#__codelineno-0-70"> 70</a></span>
-<span class="normal"><a href="#__codelineno-0-71"> 71</a></span>
-<span class="normal"><a href="#__codelineno-0-72"> 72</a></span>
-<span class="normal"><a href="#__codelineno-0-73"> 73</a></span>
-<span class="normal"><a href="#__codelineno-0-74"> 74</a></span>
-<span class="normal"><a href="#__codelineno-0-75"> 75</a></span>
-<span class="normal"><a href="#__codelineno-0-76"> 76</a></span>
-<span class="normal"><a href="#__codelineno-0-77"> 77</a></span>
-<span class="normal"><a href="#__codelineno-0-78"> 78</a></span>
-<span class="normal"><a href="#__codelineno-0-79"> 79</a></span>
-<span class="normal"><a href="#__codelineno-0-80"> 80</a></span>
-<span class="normal"><a href="#__codelineno-0-81"> 81</a></span>
-<span class="normal"><a href="#__codelineno-0-82"> 82</a></span>
-<span class="normal"><a href="#__codelineno-0-83"> 83</a></span>
-<span class="normal"><a href="#__codelineno-0-84"> 84</a></span>
-<span class="normal"><a href="#__codelineno-0-85"> 85</a></span>
-<span class="normal"><a href="#__codelineno-0-86"> 86</a></span>
-<span class="normal"><a href="#__codelineno-0-87"> 87</a></span>
-<span class="normal"><a href="#__codelineno-0-88"> 88</a></span>
-<span class="normal"><a href="#__codelineno-0-89"> 89</a></span>
-<span class="normal"><a href="#__codelineno-0-90"> 90</a></span>
-<span class="normal"><a href="#__codelineno-0-91"> 91</a></span>
-<span class="normal"><a href="#__codelineno-0-92"> 92</a></span>
-<span class="normal"><a href="#__codelineno-0-93"> 93</a></span>
-<span class="normal"><a href="#__codelineno-0-94"> 94</a></span>
-<span class="normal"><a href="#__codelineno-0-95"> 95</a></span>
-<span class="normal"><a href="#__codelineno-0-96"> 96</a></span>
-<span class="normal"><a href="#__codelineno-0-97"> 97</a></span>
-<span class="normal"><a href="#__codelineno-0-98"> 98</a></span>
-<span class="normal"><a href="#__codelineno-0-99"> 99</a></span>
-<span class="normal"><a href="#__codelineno-0-100">100</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-53"><a id="__codelineno-0-53" name="__codelineno-0-53"></a><span class="nd">@click</span><span class="o">.</span><span class="n">command</span><span class="p">()</span>
-</span><span id="__span-0-54"><a id="__codelineno-0-54" name="__codelineno-0-54"></a><span class="nd">@click</span><span class="o">.</span><span class="n">argument</span><span class="p">(</span><span class="s2">"command"</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-</span><span id="__span-0-55"><a id="__codelineno-0-55" name="__codelineno-0-55"></a><span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s2">"--api"</span><span class="p">,</span> <span class="n">metavar</span><span class="o">=</span><span class="s2">"&lt;API_KEY&gt;"</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">"Set the Google AI platform API key"</span><span class="p">)</span>
-</span><span id="__span-0-56"><a id="__codelineno-0-56" name="__codelineno-0-56"></a><span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span>
-</span><span id="__span-0-57"><a id="__codelineno-0-57" name="__codelineno-0-57"></a>    <span class="s2">"--delete-api"</span><span class="p">,</span> <span class="n">is_flag</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">"Deletes the Google AI platform API key"</span>
-</span><span id="__span-0-58"><a id="__codelineno-0-58" name="__codelineno-0-58"></a><span class="p">)</span>
-</span><span id="__span-0-59"><a id="__codelineno-0-59" name="__codelineno-0-59"></a><span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s2">"--delete-cache"</span><span class="p">,</span> <span class="n">is_flag</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">"Delete the cache"</span><span class="p">)</span>
-</span><span id="__span-0-60"><a id="__codelineno-0-60" name="__codelineno-0-60"></a><span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s2">"--help"</span><span class="p">,</span> <span class="s2">"-h"</span><span class="p">,</span> <span class="n">is_flag</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">"Display the help message"</span><span class="p">)</span>
-</span><span id="__span-0-61"><a id="__codelineno-0-61" name="__codelineno-0-61"></a><span class="nd">@click</span><span class="o">.</span><span class="n">version_option</span><span class="p">(</span><span class="n">__version__</span><span class="p">,</span> <span class="n">prog_name</span><span class="o">=</span><span class="s2">"Peter Explains (peter)"</span><span class="p">)</span>
-</span><span id="__span-0-62"><a id="__codelineno-0-62" name="__codelineno-0-62"></a><span class="k">def</span><span class="w"> </span><span class="nf">peter</span><span class="p">(</span><span class="n">command</span><span class="p">,</span> <span class="n">api</span><span class="p">,</span> <span class="n">delete_api</span><span class="p">,</span> <span class="n">delete_cache</span><span class="p">,</span> <span class="n">help</span><span class="p">):</span>
-</span><span id="__span-0-63"><a id="__codelineno-0-63" name="__codelineno-0-63"></a><span class="w">    </span><span class="sd">"""</span>
-</span><span id="__span-0-64"><a id="__codelineno-0-64" name="__codelineno-0-64"></a><span class="sd">    Function to run the Peter Explains CLI.</span>
-</span><span id="__span-0-65"><a id="__codelineno-0-65" name="__codelineno-0-65"></a>
-</span><span id="__span-0-66"><a id="__codelineno-0-66" name="__codelineno-0-66"></a><span class="sd">    This function is the entry point for the Peter Explains CLI.</span>
-</span><span id="__span-0-67"><a id="__codelineno-0-67" name="__codelineno-0-67"></a><span class="sd">    It runs the main function using the asyncio library.</span>
-</span><span id="__span-0-68"><a id="__codelineno-0-68" name="__codelineno-0-68"></a><span class="sd">    """</span>
-</span><span id="__span-0-69"><a id="__codelineno-0-69" name="__codelineno-0-69"></a>    <span class="c1"># Handle API key operations</span>
-</span><span id="__span-0-70"><a id="__codelineno-0-70" name="__codelineno-0-70"></a>    <span class="n">google_api_key</span> <span class="o">=</span> <span class="n">GoogleApiKey</span><span class="p">()</span>
-</span><span id="__span-0-71"><a id="__codelineno-0-71" name="__codelineno-0-71"></a>
-</span><span id="__span-0-72"><a id="__codelineno-0-72" name="__codelineno-0-72"></a>    <span class="k">if</span> <span class="n">api</span><span class="p">:</span>
-</span><span id="__span-0-73"><a id="__codelineno-0-73" name="__codelineno-0-73"></a>        <span class="n">google_api_key</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">api</span><span class="p">)</span>
-</span><span id="__span-0-74"><a id="__codelineno-0-74" name="__codelineno-0-74"></a>        <span class="n">click</span><span class="o">.</span><span class="n">echo</span><span class="p">(</span><span class="s2">"API key set successfully."</span><span class="p">)</span>
-</span><span id="__span-0-75"><a id="__codelineno-0-75" name="__codelineno-0-75"></a>        <span class="k">return</span>
-</span><span id="__span-0-76"><a id="__codelineno-0-76" name="__codelineno-0-76"></a>
-</span><span id="__span-0-77"><a id="__codelineno-0-77" name="__codelineno-0-77"></a>    <span class="k">if</span> <span class="n">delete_api</span><span class="p">:</span>
-</span><span id="__span-0-78"><a id="__codelineno-0-78" name="__codelineno-0-78"></a>        <span class="n">google_api_key</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
-</span><span id="__span-0-79"><a id="__codelineno-0-79" name="__codelineno-0-79"></a>        <span class="n">click</span><span class="o">.</span><span class="n">echo</span><span class="p">(</span><span class="s2">"API key deleted successfully."</span><span class="p">)</span>
-</span><span id="__span-0-80"><a id="__codelineno-0-80" name="__codelineno-0-80"></a>        <span class="k">return</span>
-</span><span id="__span-0-81"><a id="__codelineno-0-81" name="__codelineno-0-81"></a>
-</span><span id="__span-0-82"><a id="__codelineno-0-82" name="__codelineno-0-82"></a>    <span class="c1"># Handle cache operations</span>
-</span><span id="__span-0-83"><a id="__codelineno-0-83" name="__codelineno-0-83"></a>    <span class="n">cache</span> <span class="o">=</span> <span class="n">PeterCache</span><span class="p">()</span>
-</span><span id="__span-0-84"><a id="__codelineno-0-84" name="__codelineno-0-84"></a>
-</span><span id="__span-0-85"><a id="__codelineno-0-85" name="__codelineno-0-85"></a>    <span class="k">if</span> <span class="n">delete_cache</span><span class="p">:</span>
-</span><span id="__span-0-86"><a id="__codelineno-0-86" name="__codelineno-0-86"></a>        <span class="n">cache</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
-</span><span id="__span-0-87"><a id="__codelineno-0-87" name="__codelineno-0-87"></a>        <span class="n">click</span><span class="o">.</span><span class="n">echo</span><span class="p">(</span><span class="s2">"Cache cleared successfully."</span><span class="p">)</span>
-</span><span id="__span-0-88"><a id="__codelineno-0-88" name="__codelineno-0-88"></a>        <span class="k">return</span>
-</span><span id="__span-0-89"><a id="__codelineno-0-89" name="__codelineno-0-89"></a>
-</span><span id="__span-0-90"><a id="__codelineno-0-90" name="__codelineno-0-90"></a>    <span class="k">if</span> <span class="n">help</span><span class="p">:</span>
-</span><span id="__span-0-91"><a id="__codelineno-0-91" name="__codelineno-0-91"></a>        <span class="n">show_peter_help</span><span class="p">()</span>
-</span><span id="__span-0-92"><a id="__codelineno-0-92" name="__codelineno-0-92"></a>        <span class="k">return</span>
-</span><span id="__span-0-93"><a id="__codelineno-0-93" name="__codelineno-0-93"></a>
-</span><span id="__span-0-94"><a id="__codelineno-0-94" name="__codelineno-0-94"></a>    <span class="c1"># If no command is provided, show help</span>
-</span><span id="__span-0-95"><a id="__codelineno-0-95" name="__codelineno-0-95"></a>    <span class="k">if</span> <span class="ow">not</span> <span class="n">command</span><span class="p">:</span>
-</span><span id="__span-0-96"><a id="__codelineno-0-96" name="__codelineno-0-96"></a>        <span class="n">show_peter_help</span><span class="p">()</span>
-</span><span id="__span-0-97"><a id="__codelineno-0-97" name="__codelineno-0-97"></a>        <span class="k">return</span>
-</span><span id="__span-0-98"><a id="__codelineno-0-98" name="__codelineno-0-98"></a>
-</span><span id="__span-0-99"><a id="__codelineno-0-99" name="__codelineno-0-99"></a>    <span class="c1"># Run the explanation function</span>
-</span><span id="__span-0-100"><a id="__codelineno-0-100" name="__codelineno-0-100"></a>    <span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">(</span><span class="n">command</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">lower</span><span class="p">()))</span>
+              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#peter_explains.main.peter--source--__codelineno-0-53"> 53</a></span>
+<span class="normal"><a href="#peter_explains.main.peter--source--__codelineno-0-54"> 54</a></span>
+<span class="normal"><a href="#peter_explains.main.peter--source--__codelineno-0-55"> 55</a></span>
+<span class="normal"><a href="#peter_explains.main.peter--source--__codelineno-0-56"> 56</a></span>
+<span class="normal"><a href="#peter_explains.main.peter--source--__codelineno-0-57"> 57</a></span>
+<span class="normal"><a href="#peter_explains.main.peter--source--__codelineno-0-58"> 58</a></span>
+<span class="normal"><a href="#peter_explains.main.peter--source--__codelineno-0-59"> 59</a></span>
+<span class="normal"><a href="#peter_explains.main.peter--source--__codelineno-0-60"> 60</a></span>
+<span class="normal"><a href="#peter_explains.main.peter--source--__codelineno-0-61"> 61</a></span>
+<span class="normal"><a href="#peter_explains.main.peter--source--__codelineno-0-62"> 62</a></span>
+<span class="normal"><a href="#peter_explains.main.peter--source--__codelineno-0-63"> 63</a></span>
+<span class="normal"><a href="#peter_explains.main.peter--source--__codelineno-0-64"> 64</a></span>
+<span class="normal"><a href="#peter_explains.main.peter--source--__codelineno-0-65"> 65</a></span>
+<span class="normal"><a href="#peter_explains.main.peter--source--__codelineno-0-66"> 66</a></span>
+<span class="normal"><a href="#peter_explains.main.peter--source--__codelineno-0-67"> 67</a></span>
+<span class="normal"><a href="#peter_explains.main.peter--source--__codelineno-0-68"> 68</a></span>
+<span class="normal"><a href="#peter_explains.main.peter--source--__codelineno-0-69"> 69</a></span>
+<span class="normal"><a href="#peter_explains.main.peter--source--__codelineno-0-70"> 70</a></span>
+<span class="normal"><a href="#peter_explains.main.peter--source--__codelineno-0-71"> 71</a></span>
+<span class="normal"><a href="#peter_explains.main.peter--source--__codelineno-0-72"> 72</a></span>
+<span class="normal"><a href="#peter_explains.main.peter--source--__codelineno-0-73"> 73</a></span>
+<span class="normal"><a href="#peter_explains.main.peter--source--__codelineno-0-74"> 74</a></span>
+<span class="normal"><a href="#peter_explains.main.peter--source--__codelineno-0-75"> 75</a></span>
+<span class="normal"><a href="#peter_explains.main.peter--source--__codelineno-0-76"> 76</a></span>
+<span class="normal"><a href="#peter_explains.main.peter--source--__codelineno-0-77"> 77</a></span>
+<span class="normal"><a href="#peter_explains.main.peter--source--__codelineno-0-78"> 78</a></span>
+<span class="normal"><a href="#peter_explains.main.peter--source--__codelineno-0-79"> 79</a></span>
+<span class="normal"><a href="#peter_explains.main.peter--source--__codelineno-0-80"> 80</a></span>
+<span class="normal"><a href="#peter_explains.main.peter--source--__codelineno-0-81"> 81</a></span>
+<span class="normal"><a href="#peter_explains.main.peter--source--__codelineno-0-82"> 82</a></span>
+<span class="normal"><a href="#peter_explains.main.peter--source--__codelineno-0-83"> 83</a></span>
+<span class="normal"><a href="#peter_explains.main.peter--source--__codelineno-0-84"> 84</a></span>
+<span class="normal"><a href="#peter_explains.main.peter--source--__codelineno-0-85"> 85</a></span>
+<span class="normal"><a href="#peter_explains.main.peter--source--__codelineno-0-86"> 86</a></span>
+<span class="normal"><a href="#peter_explains.main.peter--source--__codelineno-0-87"> 87</a></span>
+<span class="normal"><a href="#peter_explains.main.peter--source--__codelineno-0-88"> 88</a></span>
+<span class="normal"><a href="#peter_explains.main.peter--source--__codelineno-0-89"> 89</a></span>
+<span class="normal"><a href="#peter_explains.main.peter--source--__codelineno-0-90"> 90</a></span>
+<span class="normal"><a href="#peter_explains.main.peter--source--__codelineno-0-91"> 91</a></span>
+<span class="normal"><a href="#peter_explains.main.peter--source--__codelineno-0-92"> 92</a></span>
+<span class="normal"><a href="#peter_explains.main.peter--source--__codelineno-0-93"> 93</a></span>
+<span class="normal"><a href="#peter_explains.main.peter--source--__codelineno-0-94"> 94</a></span>
+<span class="normal"><a href="#peter_explains.main.peter--source--__codelineno-0-95"> 95</a></span>
+<span class="normal"><a href="#peter_explains.main.peter--source--__codelineno-0-96"> 96</a></span>
+<span class="normal"><a href="#peter_explains.main.peter--source--__codelineno-0-97"> 97</a></span>
+<span class="normal"><a href="#peter_explains.main.peter--source--__codelineno-0-98"> 98</a></span>
+<span class="normal"><a href="#peter_explains.main.peter--source--__codelineno-0-99"> 99</a></span>
+<span class="normal"><a href="#peter_explains.main.peter--source--__codelineno-0-100">100</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="peter_explains.main.peter--source--__span-0-53"><a id="peter_explains.main.peter--source--__codelineno-0-53" name="peter_explains.main.peter--source--__codelineno-0-53"></a><span class="nd">@click</span><span class="o">.</span><span class="n">command</span><span class="p">()</span>
+</span><span id="peter_explains.main.peter--source--__span-0-54"><a id="peter_explains.main.peter--source--__codelineno-0-54" name="peter_explains.main.peter--source--__codelineno-0-54"></a><span class="nd">@click</span><span class="o">.</span><span class="n">argument</span><span class="p">(</span><span class="s2">"command"</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</span><span id="peter_explains.main.peter--source--__span-0-55"><a id="peter_explains.main.peter--source--__codelineno-0-55" name="peter_explains.main.peter--source--__codelineno-0-55"></a><span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s2">"--api"</span><span class="p">,</span> <span class="n">metavar</span><span class="o">=</span><span class="s2">"&lt;API_KEY&gt;"</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">"Set the Google AI platform API key"</span><span class="p">)</span>
+</span><span id="peter_explains.main.peter--source--__span-0-56"><a id="peter_explains.main.peter--source--__codelineno-0-56" name="peter_explains.main.peter--source--__codelineno-0-56"></a><span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span>
+</span><span id="peter_explains.main.peter--source--__span-0-57"><a id="peter_explains.main.peter--source--__codelineno-0-57" name="peter_explains.main.peter--source--__codelineno-0-57"></a>    <span class="s2">"--delete-api"</span><span class="p">,</span> <span class="n">is_flag</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">"Deletes the Google AI platform API key"</span>
+</span><span id="peter_explains.main.peter--source--__span-0-58"><a id="peter_explains.main.peter--source--__codelineno-0-58" name="peter_explains.main.peter--source--__codelineno-0-58"></a><span class="p">)</span>
+</span><span id="peter_explains.main.peter--source--__span-0-59"><a id="peter_explains.main.peter--source--__codelineno-0-59" name="peter_explains.main.peter--source--__codelineno-0-59"></a><span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s2">"--delete-cache"</span><span class="p">,</span> <span class="n">is_flag</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">"Delete the cache"</span><span class="p">)</span>
+</span><span id="peter_explains.main.peter--source--__span-0-60"><a id="peter_explains.main.peter--source--__codelineno-0-60" name="peter_explains.main.peter--source--__codelineno-0-60"></a><span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s2">"--help"</span><span class="p">,</span> <span class="s2">"-h"</span><span class="p">,</span> <span class="n">is_flag</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">"Display the help message"</span><span class="p">)</span>
+</span><span id="peter_explains.main.peter--source--__span-0-61"><a id="peter_explains.main.peter--source--__codelineno-0-61" name="peter_explains.main.peter--source--__codelineno-0-61"></a><span class="nd">@click</span><span class="o">.</span><span class="n">version_option</span><span class="p">(</span><span class="n">__version__</span><span class="p">,</span> <span class="n">prog_name</span><span class="o">=</span><span class="s2">"Peter Explains (peter)"</span><span class="p">)</span>
+</span><span id="peter_explains.main.peter--source--__span-0-62"><a id="peter_explains.main.peter--source--__codelineno-0-62" name="peter_explains.main.peter--source--__codelineno-0-62"></a><span class="k">def</span><span class="w"> </span><span class="nf">peter</span><span class="p">(</span><span class="n">command</span><span class="p">,</span> <span class="n">api</span><span class="p">,</span> <span class="n">delete_api</span><span class="p">,</span> <span class="n">delete_cache</span><span class="p">,</span> <span class="n">help</span><span class="p">):</span>
+</span><span id="peter_explains.main.peter--source--__span-0-63"><a id="peter_explains.main.peter--source--__codelineno-0-63" name="peter_explains.main.peter--source--__codelineno-0-63"></a><span class="w">    </span><span class="sd">"""</span>
+</span><span id="peter_explains.main.peter--source--__span-0-64"><a id="peter_explains.main.peter--source--__codelineno-0-64" name="peter_explains.main.peter--source--__codelineno-0-64"></a><span class="sd">    Function to run the Peter Explains CLI.</span>
+</span><span id="peter_explains.main.peter--source--__span-0-65"><a id="peter_explains.main.peter--source--__codelineno-0-65" name="peter_explains.main.peter--source--__codelineno-0-65"></a>
+</span><span id="peter_explains.main.peter--source--__span-0-66"><a id="peter_explains.main.peter--source--__codelineno-0-66" name="peter_explains.main.peter--source--__codelineno-0-66"></a><span class="sd">    This function is the entry point for the Peter Explains CLI.</span>
+</span><span id="peter_explains.main.peter--source--__span-0-67"><a id="peter_explains.main.peter--source--__codelineno-0-67" name="peter_explains.main.peter--source--__codelineno-0-67"></a><span class="sd">    It runs the main function using the asyncio library.</span>
+</span><span id="peter_explains.main.peter--source--__span-0-68"><a id="peter_explains.main.peter--source--__codelineno-0-68" name="peter_explains.main.peter--source--__codelineno-0-68"></a><span class="sd">    """</span>
+</span><span id="peter_explains.main.peter--source--__span-0-69"><a id="peter_explains.main.peter--source--__codelineno-0-69" name="peter_explains.main.peter--source--__codelineno-0-69"></a>    <span class="c1"># Handle API key operations</span>
+</span><span id="peter_explains.main.peter--source--__span-0-70"><a id="peter_explains.main.peter--source--__codelineno-0-70" name="peter_explains.main.peter--source--__codelineno-0-70"></a>    <span class="n">google_api_key</span> <span class="o">=</span> <span class="n">GoogleApiKey</span><span class="p">()</span>
+</span><span id="peter_explains.main.peter--source--__span-0-71"><a id="peter_explains.main.peter--source--__codelineno-0-71" name="peter_explains.main.peter--source--__codelineno-0-71"></a>
+</span><span id="peter_explains.main.peter--source--__span-0-72"><a id="peter_explains.main.peter--source--__codelineno-0-72" name="peter_explains.main.peter--source--__codelineno-0-72"></a>    <span class="k">if</span> <span class="n">api</span><span class="p">:</span>
+</span><span id="peter_explains.main.peter--source--__span-0-73"><a id="peter_explains.main.peter--source--__codelineno-0-73" name="peter_explains.main.peter--source--__codelineno-0-73"></a>        <span class="n">google_api_key</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">api</span><span class="p">)</span>
+</span><span id="peter_explains.main.peter--source--__span-0-74"><a id="peter_explains.main.peter--source--__codelineno-0-74" name="peter_explains.main.peter--source--__codelineno-0-74"></a>        <span class="n">click</span><span class="o">.</span><span class="n">echo</span><span class="p">(</span><span class="s2">"API key set successfully."</span><span class="p">)</span>
+</span><span id="peter_explains.main.peter--source--__span-0-75"><a id="peter_explains.main.peter--source--__codelineno-0-75" name="peter_explains.main.peter--source--__codelineno-0-75"></a>        <span class="k">return</span>
+</span><span id="peter_explains.main.peter--source--__span-0-76"><a id="peter_explains.main.peter--source--__codelineno-0-76" name="peter_explains.main.peter--source--__codelineno-0-76"></a>
+</span><span id="peter_explains.main.peter--source--__span-0-77"><a id="peter_explains.main.peter--source--__codelineno-0-77" name="peter_explains.main.peter--source--__codelineno-0-77"></a>    <span class="k">if</span> <span class="n">delete_api</span><span class="p">:</span>
+</span><span id="peter_explains.main.peter--source--__span-0-78"><a id="peter_explains.main.peter--source--__codelineno-0-78" name="peter_explains.main.peter--source--__codelineno-0-78"></a>        <span class="n">google_api_key</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+</span><span id="peter_explains.main.peter--source--__span-0-79"><a id="peter_explains.main.peter--source--__codelineno-0-79" name="peter_explains.main.peter--source--__codelineno-0-79"></a>        <span class="n">click</span><span class="o">.</span><span class="n">echo</span><span class="p">(</span><span class="s2">"API key deleted successfully."</span><span class="p">)</span>
+</span><span id="peter_explains.main.peter--source--__span-0-80"><a id="peter_explains.main.peter--source--__codelineno-0-80" name="peter_explains.main.peter--source--__codelineno-0-80"></a>        <span class="k">return</span>
+</span><span id="peter_explains.main.peter--source--__span-0-81"><a id="peter_explains.main.peter--source--__codelineno-0-81" name="peter_explains.main.peter--source--__codelineno-0-81"></a>
+</span><span id="peter_explains.main.peter--source--__span-0-82"><a id="peter_explains.main.peter--source--__codelineno-0-82" name="peter_explains.main.peter--source--__codelineno-0-82"></a>    <span class="c1"># Handle cache operations</span>
+</span><span id="peter_explains.main.peter--source--__span-0-83"><a id="peter_explains.main.peter--source--__codelineno-0-83" name="peter_explains.main.peter--source--__codelineno-0-83"></a>    <span class="n">cache</span> <span class="o">=</span> <span class="n">PeterCache</span><span class="p">()</span>
+</span><span id="peter_explains.main.peter--source--__span-0-84"><a id="peter_explains.main.peter--source--__codelineno-0-84" name="peter_explains.main.peter--source--__codelineno-0-84"></a>
+</span><span id="peter_explains.main.peter--source--__span-0-85"><a id="peter_explains.main.peter--source--__codelineno-0-85" name="peter_explains.main.peter--source--__codelineno-0-85"></a>    <span class="k">if</span> <span class="n">delete_cache</span><span class="p">:</span>
+</span><span id="peter_explains.main.peter--source--__span-0-86"><a id="peter_explains.main.peter--source--__codelineno-0-86" name="peter_explains.main.peter--source--__codelineno-0-86"></a>        <span class="n">cache</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+</span><span id="peter_explains.main.peter--source--__span-0-87"><a id="peter_explains.main.peter--source--__codelineno-0-87" name="peter_explains.main.peter--source--__codelineno-0-87"></a>        <span class="n">click</span><span class="o">.</span><span class="n">echo</span><span class="p">(</span><span class="s2">"Cache cleared successfully."</span><span class="p">)</span>
+</span><span id="peter_explains.main.peter--source--__span-0-88"><a id="peter_explains.main.peter--source--__codelineno-0-88" name="peter_explains.main.peter--source--__codelineno-0-88"></a>        <span class="k">return</span>
+</span><span id="peter_explains.main.peter--source--__span-0-89"><a id="peter_explains.main.peter--source--__codelineno-0-89" name="peter_explains.main.peter--source--__codelineno-0-89"></a>
+</span><span id="peter_explains.main.peter--source--__span-0-90"><a id="peter_explains.main.peter--source--__codelineno-0-90" name="peter_explains.main.peter--source--__codelineno-0-90"></a>    <span class="k">if</span> <span class="n">help</span><span class="p">:</span>
+</span><span id="peter_explains.main.peter--source--__span-0-91"><a id="peter_explains.main.peter--source--__codelineno-0-91" name="peter_explains.main.peter--source--__codelineno-0-91"></a>        <span class="n">show_peter_help</span><span class="p">()</span>
+</span><span id="peter_explains.main.peter--source--__span-0-92"><a id="peter_explains.main.peter--source--__codelineno-0-92" name="peter_explains.main.peter--source--__codelineno-0-92"></a>        <span class="k">return</span>
+</span><span id="peter_explains.main.peter--source--__span-0-93"><a id="peter_explains.main.peter--source--__codelineno-0-93" name="peter_explains.main.peter--source--__codelineno-0-93"></a>
+</span><span id="peter_explains.main.peter--source--__span-0-94"><a id="peter_explains.main.peter--source--__codelineno-0-94" name="peter_explains.main.peter--source--__codelineno-0-94"></a>    <span class="c1"># If no command is provided, show help</span>
+</span><span id="peter_explains.main.peter--source--__span-0-95"><a id="peter_explains.main.peter--source--__codelineno-0-95" name="peter_explains.main.peter--source--__codelineno-0-95"></a>    <span class="k">if</span> <span class="ow">not</span> <span class="n">command</span><span class="p">:</span>
+</span><span id="peter_explains.main.peter--source--__span-0-96"><a id="peter_explains.main.peter--source--__codelineno-0-96" name="peter_explains.main.peter--source--__codelineno-0-96"></a>        <span class="n">show_peter_help</span><span class="p">()</span>
+</span><span id="peter_explains.main.peter--source--__span-0-97"><a id="peter_explains.main.peter--source--__codelineno-0-97" name="peter_explains.main.peter--source--__codelineno-0-97"></a>        <span class="k">return</span>
+</span><span id="peter_explains.main.peter--source--__span-0-98"><a id="peter_explains.main.peter--source--__codelineno-0-98" name="peter_explains.main.peter--source--__codelineno-0-98"></a>
+</span><span id="peter_explains.main.peter--source--__span-0-99"><a id="peter_explains.main.peter--source--__codelineno-0-99" name="peter_explains.main.peter--source--__codelineno-0-99"></a>    <span class="c1"># Run the explanation function</span>
+</span><span id="peter_explains.main.peter--source--__span-0-100"><a id="peter_explains.main.peter--source--__codelineno-0-100" name="peter_explains.main.peter--source--__codelineno-0-100"></a>    <span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">(</span><span class="n">command</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">lower</span><span class="p">()))</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
     </div>
@@ -1460,10 +1460,10 @@ It runs the main function using the asyncio library.</p>
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.indexes", "navigation.top", "content.action.view", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.indexes", "navigation.top", "content.action.view", "content.code.copy"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../assets/javascripts/bundle.c21346df.min.js"></script>
       
     
   </body>
